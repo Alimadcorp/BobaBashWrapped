@@ -1,0 +1,31 @@
+body{
+    background-color: aliceblue;
+    margin: 0;
+    padding: auto;
+}
+container{
+    max-width: 800;
+    margin: auto;
+    background-color: azure;
+    border-radius: 8;
+}
+h1{
+    color: black;
+    text-align: center;
+}
+p{
+    text-align: center;
+    font-size: larger;
+    line-height: normal;
+    color: darkcyan;
+}
+anchor-button{
+    <button id="toggleReadMoreBtn" onclick="toggleReadMore()">Read More Details 👇</button>
+    color: crimson;
+    font-size: medium;
+    font-weight: 5;
+    border-radius: 5;
+}
+center{
+    text-align: center;
+}

@@ -1,0 +1,611 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Explorer 🚀</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background: #050b1b;
+        }
+
+        header, footer {
+            padding: 20px;
+            text-align: center;
+            background: #101a35;
+        }
+
+        nav a {
+            color: #80dfff;
+            margin: 10px;
+            text-decoration: none;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 65px 20px;
+            background: linear-gradient(135deg, #101a48, #35165e, #06142d);
+        }
+
+        h1 {
+            font-size: 45px;
+            color: #75dcff;
+        }
+
+        h2 {
+            color: #a8e5ff;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 8px;
+            border: none;
+            border-radius: 10px;
+            background: #398cff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #8957ff;
+            transform: scale(1.03);
+        }
+
+        section {
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        .planets {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .planet {
+            background: #111d38;
+            border: 1px solid #334b78;
+            border-radius: 15px;
+            padding: 20px;
+            width: 125px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .planet:hover {
+            background: #25365e;
+            transform: translateY(-5px);
+        }
+
+        .planet-icon {
+            font-size: 50px;
+        }
+
+        #planet-info, #fact-box, #quiz-box {
+            background: #111d38;
+            border: 1px solid #334b78;
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 650px;
+            margin: 20px auto;
+        }
+
+        #answer {
+            font-weight: bold;
+            color: #85ffb5;
+        }
+
+        #progress {
+            color: #80dfff;
+            font-weight: bold;
+        }
+
+        .option-button {
+            min-width: 180px;
+        }
+
+        footer {
+            margin-top: 30px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+
+            .option-button {
+                width: 90%;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h2>🪐 SPACE EXPLORER</h2>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#planets">Planets</a>
+            <a href="#facts">Fun Facts</a>
+            <a href="#quiz">Quiz</a>
+        </nav>
+    </header>
+
+    <div class="hero" id="home">
+        <h1>EXPLORE THE UNIVERSE 🚀</h1>
+        <p>Discover planets, unlock space facts and test your knowledge!</p>
+        <button onclick="launchRocket()">🚀 Launch Rocket</button>
+        <p id="countdown"></p>
+    </div>
+
+    <section id="planets">
+        <h2>🪐 Explore the Planets</h2>
+        <p>Click a planet to discover something amazing!</p>
+
+        <div class="planets">
+            <div class="planet" onclick="showPlanet('Earth')">
+                <div class="planet-icon">🌍</div>
+                <h3>Earth</h3>
+                <p>Our home</p>
+            </div>
+
+            <div class="planet" onclick="showPlanet('Mars')">
+                <div class="planet-icon">🔴</div>
+                <h3>Mars</h3>
+                <p>Red Planet</p>
+            </div>
+
+            <div class="planet" onclick="showPlanet('Jupiter')">
+                <div class="planet-icon">🟠</div>
+                <h3>Jupiter</h3>
+                <p>Planet giant</p>
+            </div>
+
+            <div class="planet" onclick="showPlanet('Saturn')">
+                <div class="planet-icon">🪐</div>
+                <h3>Saturn</h3>
+                <p>Ringed planet</p>
+            </div>
+
+            <div class="planet" onclick="showPlanet('Neptune')">
+                <div class="planet-icon">🔵</div>
+                <h3>Neptune</h3>
+                <p>Windy world</p>
+            </div>
+
+            <div class="planet" onclick="showPlanet('Mercury')">
+                <div class="planet-icon">⚫</div>
+                <h3>Mercury</h3>
+                <p>Closest to Sun</p>
+            </div>
+        </div>
+
+        <div id="planet-info">
+            <h3>Welcome, astronaut! 👨‍🚀</h3>
+            <p>Choose a planet above to learn more.</p>
+        </div>
+    </section>
+
+    <section id="facts">
+        <h2>✨ Space Fact Generator</h2>
+        <p>Ready to learn something surprising?</p>
+
+        <div id="fact-box">
+            Click the button to reveal a random space fact!
+        </div>
+
+        <button onclick="newFact()">🎲 Discover a Fact</button>
+    </section>
+
+    <section id="quiz">
+        <h2>🧠 Space Explorer: Challenge Mode</h2>
+        <p>20 questions. Four choices. How much do you really know about space?</p>
+
+        <div id="quiz-box">
+            <p id="progress">Question 1 of 20</p>
+            <h3 id="question"></h3>
+
+            <div id="options"></div>
+
+            <p id="answer" aria-live="polite"></p>
+            <p>🏆 Score: <span id="score">0</span></p>
+
+            <button id="next-button" onclick="nextQuestion()" disabled>
+                Next Question ➡️
+            </button>
+
+            <div id="restart-area"></div>
+        </div>
+    </section>
+
+    <footer>
+        <h3>🌌 The Universe Is Waiting!</h3>
+        <p>Keep exploring. Keep learning. Keep building.</p>
+        <p>Made with ❤️ for Hack Club</p>
+    </footer>
+
+    <script>
+        // PLANET INFORMATION
+
+        function showPlanet(planet) {
+            let info = "";
+
+            if (planet === "Earth") {
+                info = "🌍 Earth is our home and the only planet known to support life.";
+            } else if (planet === "Mars") {
+                info = "🔴 Mars is called the Red Planet because of iron-rich dust.";
+            } else if (planet === "Jupiter") {
+                info = "🟠 Jupiter is the largest planet in our solar system!";
+            } else if (planet === "Saturn") {
+                info = "🪐 Saturn has spectacular rings made mostly of ice and rocky material.";
+            } else if (planet === "Neptune") {
+                info = "🔵 Neptune is an icy giant with extremely fast winds.";
+            } else if (planet === "Mercury") {
+                info = "⚫ Mercury is the closest planet to the Sun.";
+            }
+
+            document.getElementById("planet-info").innerHTML =
+                "<h3>" + planet + "</h3><p>" + info + "</p>";
+        }
+
+        // RANDOM SPACE FACTS
+
+        let facts = [
+            "☀️ The Sun contains about 99.86% of the solar system's mass.",
+            "🪐 Jupiter is the largest planet in our solar system.",
+            "🌌 The observable universe contains billions of galaxies.",
+            "🌍 Earth is the only planet currently known to support life.",
+            "🚀 Sound cannot travel through the vacuum of space.",
+            "🌙 The Moon takes about 27.3 days to orbit Earth.",
+            "💫 A day on Venus is longer than its year.",
+            "🛰️ The International Space Station orbits Earth roughly every 90 minutes."
+        ];
+
+        function newFact() {
+            let number = Math.floor(Math.random() * facts.length);
+            document.getElementById("fact-box").innerHTML = facts[number];
+        }
+
+        // SPACE QUIZ: 20 QUESTIONS
+
+        let questions = [
+            {
+                question: "1. Which planet is known as the Red Planet?",
+                options: ["Venus", "Mars", "Mercury", "Neptune"],
+                correct: 1,
+                explanation: "Mars looks red because its surface contains iron oxide, similar to rust."
+            },
+            {
+                question: "2. Which planet has the greatest mass?",
+                options: ["Saturn", "Earth", "Jupiter", "Neptune"],
+                correct: 2,
+                explanation: "Jupiter is the most massive planet in our solar system."
+            },
+            {
+                question: "3. Why do we experience seasons on Earth?",
+                options: [
+                    "Earth moves closer to the Sun in summer",
+                    "The Sun gets hotter during summer",
+                    "Earth's axis is tilted",
+                    "The Moon blocks sunlight"
+                ],
+                correct: 2,
+                explanation: "Earth's axial tilt changes the angle and duration of sunlight during the year."
+            },
+            {
+                question: "4. Which planet has a day longer than its year?",
+                options: ["Mars", "Venus", "Jupiter", "Earth"],
+                correct: 1,
+                explanation: "Venus rotates very slowly. One rotation takes about 243 Earth days, while its year lasts about 225 Earth days."
+            },
+            {
+                question: "5. What is the Sun primarily made of?",
+                options: ["Oxygen and carbon", "Iron and nickel", "Hydrogen and helium", "Liquid water"],
+                correct: 2,
+                explanation: "The Sun is a giant ball of hot plasma made mostly of hydrogen and helium."
+            },
+            {
+                question: "6. What is an astronomical unit (AU)?",
+                options: [
+                    "The distance light travels in a year",
+                    "The average distance between Earth and the Sun",
+                    "The radius of the Milky Way",
+                    "The distance to the nearest star"
+                ],
+                correct: 1,
+                explanation: "One AU is about 150 million kilometres, approximately Earth's average distance from the Sun."
+            },
+            {
+                question: "7. Which moon has lakes and seas of liquid methane and ethane?",
+                options: ["Europa", "Titan", "Phobos", "Our Moon"],
+                correct: 1,
+                explanation: "Titan, Saturn's largest moon, has lakes and seas of liquid hydrocarbons on its surface."
+            },
+            {
+                question: "8. What is the event horizon of a black hole?",
+                options: [
+                    "Its hottest layer",
+                    "The orbit of its nearest planet",
+                    "The boundary beyond which light cannot escape",
+                    "A cloud of gas around it"
+                ],
+                correct: 2,
+                explanation: "Beyond the event horizon, escape would require travelling faster than light."
+            },
+            {
+                question: "9. Which planet has the strongest winds measured in the solar system?",
+                options: ["Earth", "Mars", "Neptune", "Mercury"],
+                correct: 2,
+                explanation: "Neptune has extremely fast winds, reaching around 2,000 km/h in some measurements."
+            },
+            {
+                question: "10. Why does the Moon shine?",
+                options: [
+                    "It produces its own visible light",
+                    "It reflects sunlight",
+                    "It reflects light from Earth only",
+                    "It is permanently on fire"
+                ],
+                correct: 1,
+                explanation: "The Moon does not produce significant visible light of its own; we see reflected sunlight."
+            },
+            {
+                question: "11. What is a light-year a measurement of?",
+                options: ["Time", "Brightness", "Distance", "Temperature"],
+                correct: 2,
+                explanation: "A light-year is the distance light travels in one year: about 9.46 trillion kilometres."
+            },
+            {
+                question: "12. What force keeps planets in orbit around the Sun?",
+                options: ["Magnetism", "Friction", "Gravity", "Air pressure"],
+                correct: 2,
+                explanation: "The Sun's gravity bends the planets' paths, keeping them in orbit."
+            },
+            {
+                question: "13. Which planet is least dense on average?",
+                options: ["Earth", "Saturn", "Mercury", "Mars"],
+                correct: 1,
+                explanation: "Saturn has the lowest average density of the planets, less than the density of water."
+            },
+            {
+                question: "14. What is the main reason stars appear to twinkle?",
+                options: [
+                    "They repeatedly switch on and off",
+                    "Earth's atmosphere bends their light",
+                    "They change their distance every second",
+                    "The Moon reflects their light"
+                ],
+                correct: 1,
+                explanation: "Turbulence in Earth's atmosphere changes the path of starlight, making stars appear to twinkle."
+            },
+            {
+                question: "15. What powers the Sun's energy production?",
+                options: [
+                    "Burning coal",
+                    "Nuclear fission",
+                    "Nuclear fusion",
+                    "Chemical reactions"
+                ],
+                correct: 2,
+                explanation: "The Sun releases energy by fusing hydrogen nuclei into helium in its core."
+            },
+            {
+                question: "16. What is the name of the galaxy containing our solar system?",
+                options: ["Andromeda", "Whirlpool", "Milky Way", "Sombrero"],
+                correct: 2,
+                explanation: "Our solar system is in the Milky Way, a barred spiral galaxy."
+            },
+            {
+                question: "17. Why can astronauts in orbit appear weightless?",
+                options: [
+                    "There is no gravity in space",
+                    "They are in continuous free fall around Earth",
+                    "Their mass becomes zero",
+                    "Earth's magnetic field cancels gravity"
+                ],
+                correct: 1,
+                explanation: "Gravity is still acting on astronauts. They and their spacecraft are continuously falling around Earth together."
+            },
+            {
+                question: "18. What happens when a massive star runs out of fuel and its core collapses?",
+                options: [
+                    "It must become a planet",
+                    "It always disappears without a trace",
+                    "It may explode as a supernova",
+                    "It becomes a comet"
+                ],
+                correct: 2,
+                explanation: "Some massive stars explode as supernovae after core collapse. The exact outcome depends on the star's properties."
+            },
+            {
+                question: "19. Which spacecraft became the first to enter interstellar space?",
+                options: [
+                    "Voyager 1",
+                    "Apollo 11",
+                    "Hubble Space Telescope",
+                    "Mars Pathfinder"
+                ],
+                correct: 0,
+                explanation: "Voyager 1 crossed the heliopause into interstellar space in 2012."
+            },
+            {
+                question: "20. A planet is 4 light-years away. If a signal travels at light speed, how long does it take to reach us?",
+                options: ["4 seconds", "4 days", "4 years", "40 years"],
+                correct: 2,
+                explanation: "A light-year is the distance light travels in one year, so light takes 4 years to cross 4 light-years."
+            }
+        ];
+
+        let score = 0;
+        let questionNumber = 0;
+        let answered = false;
+
+        function loadQuestion() {
+            answered = false;
+
+            let current = questions[questionNumber];
+
+            document.getElementById("progress").innerHTML =
+                "Question " + (questionNumber + 1) + " of " + questions.length;
+
+            document.getElementById("question").innerHTML = current.question;
+            document.getElementById("answer").innerHTML = "";
+            document.getElementById("next-button").disabled = true;
+
+            let optionsHTML = "";
+
+            for (let i = 0; i < current.options.length; i++) {
+                optionsHTML +=
+                    '<button class="option-button" onclick="checkAnswer(' + i + ')">' +
+                    current.options[i] +
+                    '</button>';
+            }
+
+            document.getElementById("options").innerHTML = optionsHTML;
+        }
+
+        function checkAnswer(choice) {
+            if (answered) {
+                return;
+            }
+
+            answered = true;
+
+            let current = questions[questionNumber];
+            let buttons = document.querySelectorAll("#options button");
+
+            if (choice === current.correct) {
+                score++;
+
+                document.getElementById("answer").innerHTML =
+                    "✅ Correct! " + current.explanation;
+            } else {
+                document.getElementById("answer").innerHTML =
+                    "❌ Not quite! Correct answer: " +
+                    current.options[current.correct] +
+                    ". " + current.explanation;
+            }
+
+            document.getElementById("score").innerHTML = score;
+
+            buttons.forEach(function(button, index) {
+                button.disabled = true;
+
+                if (index === current.correct) {
+                    button.style.background = "#16845b";
+                } else if (index === choice) {
+                    button.style.background = "#b83245";
+                }
+            });
+
+            document.getElementById("next-button").disabled = false;
+
+            if (questionNumber === questions.length - 1) {
+                document.getElementById("next-button").innerHTML =
+                    "See Final Results 🏆";
+            }
+        }
+
+        function nextQuestion() {
+            if (!answered) {
+                return;
+            }
+
+            questionNumber++;
+
+            if (questionNumber >= questions.length) {
+                showResults();
+            } else {
+                loadQuestion();
+            }
+        }
+
+        function showResults() {
+            document.getElementById("progress").innerHTML =
+                "🚀 MISSION COMPLETE";
+
+            document.getElementById("question").innerHTML =
+                "You scored " + score + " out of " + questions.length + "!";
+
+            let percentage = Math.round(score / questions.length * 100);
+            let message = "";
+
+            if (score === 20) {
+                message = "🌟 PERFECT SCORE! You are a space genius!";
+            } else if (score >= 16) {
+                message = "🛰️ Outstanding! You really know your universe.";
+            } else if (score >= 12) {
+                message = "🌙 Great work! Your astronomy knowledge is strong.";
+            } else if (score >= 8) {
+                message = "🪐 Good effort! Keep exploring and learning.";
+            } else {
+                message = "🚀 Every astronaut starts somewhere. Try again!";
+            }
+
+            document.getElementById("options").innerHTML =
+                "<h2>" + percentage + "%</h2><p>" + message + "</p>";
+
+            document.getElementById("answer").innerHTML =
+                "Correct answers: " + score + " | Incorrect answers: " +
+                (questions.length - score);
+
+            document.getElementById("next-button").style.display = "none";
+
+            document.getElementById("restart-area").innerHTML =
+                '<button onclick="restartQuiz()">🔄 Restart Mission</button>';
+        }
+
+        function restartQuiz() {
+            score = 0;
+            questionNumber = 0;
+
+            document.getElementById("score").innerHTML = score;
+            document.getElementById("next-button").style.display = "inline-block";
+            document.getElementById("next-button").innerHTML = "Next Question ➡️";
+            document.getElementById("restart-area").innerHTML = "";
+
+            loadQuestion();
+        }
+
+        // ROCKET LAUNCH COUNTDOWN
+
+        function launchRocket() {
+            let count = 3;
+            let countdownText = document.getElementById("countdown");
+
+            countdownText.innerHTML = "🚀 Preparing for launch...";
+
+            let timer = setInterval(function() {
+                countdownText.innerHTML = count + "...";
+                count--;
+
+                if (count < 0) {
+                    clearInterval(timer);
+                    countdownText.innerHTML =
+                        "🌟 LIFTOFF! Welcome to space, astronaut!";
+                }
+            }, 1000);
+        }
+
+        // Start the quiz
+
+        loadQuestion();
+    </script>
+
+<script src="script.js"></script>
+</body>
+</html>

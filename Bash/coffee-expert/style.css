@@ -1,0 +1,33 @@
+body {
+    background-color: bisque;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;}
+
+h1 {
+  font-family: fantasy;
+   color: saddlebrown;
+   }
+   P{color: rgb(156, 94, 50);}
+
+h2 {
+   font-family: fantasy;
+   color: saddlebrown;
+}
+
+.pink {
+    background-color: #f5dce2;
+}
+
+.green {
+    background-color: #e2ead8;
+}
+
+.beige {
+    background-color: #f2dfca;
+}
+
+.lavender {
+    background-color: #e8def2;
+}
+
+.circle{color: darkgoldenrod;}

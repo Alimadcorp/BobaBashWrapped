@@ -1,0 +1,590 @@
+{
+  "stats": {
+    "preCount": 68,
+    "avgRating": "8.4",
+    "checkedIn": 78,
+    "topMethod": "Pasted Code"
+  },
+  "chartData": {
+    "labels": [
+      "2026-09-01",
+      "2026-09-02",
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13",
+      "2026-09-14",
+      "2026-09-15",
+      "2026-09-16",
+      "2026-09-17",
+      "2026-09-18",
+      "2026-09-19",
+      "2026-09-20",
+      "2026-09-21",
+      "2026-09-22",
+      "2026-09-23",
+      "2026-09-24",
+      "2026-09-25",
+      "2026-09-26",
+      "2026-09-27",
+      "2026-09-28",
+      "2026-09-29",
+      "2026-09-30",
+      "2026-10-01",
+      "2026-10-03",
+      "2026-10-04",
+      "2026-10-05",
+      "2026-10-06",
+      "2026-10-07",
+      "2026-10-10",
+      "2026-10-11",
+      "2026-10-12",
+      "2026-10-13",
+      "2026-10-14",
+      "2026-10-15",
+      "2026-10-16",
+      "2026-10-17"
+    ],
+    "values": [
+      2,
+      3,
+      12,
+      30,
+      34,
+      42,
+      46,
+      53,
+      60,
+      63,
+      74,
+      99,
+      109,
+      119,
+      123,
+      127,
+      128,
+      132,
+      139,
+      145,
+      149,
+      152,
+      155,
+      158,
+      162,
+      167,
+      171,
+      172,
+      173,
+      175,
+      177,
+      178,
+      181,
+      182,
+      184,
+      188,
+      194,
+      205,
+      209,
+      224,
+      226
+    ]
+  },
+  "preEvent": [
+    {
+      "name": "rabie ul awal hammad",
+      "title": "My cat site",
+      "url": "https://bash.hackclub.com/built/my-cat-site-z3sufj"
+    },
+    {
+      "name": "Kashaf Eman",
+      "title": "Imama Fan page",
+      "url": "https://kshfiii.github.io/Imama-fan-page/"
+    },
+    {
+      "name": "dawood",
+      "title": "my site",
+      "url": "https://bash.hackclub.com/built/my-site-k31qxy"
+    },
+    {
+      "name": "Aleezay",
+      "title": "My health home centre",
+      "url": "https://bash.hackclub.com/built/my-health-home-centre-avc5gr"
+    },
+    {
+      "name": "Sumaiya Shahzad",
+      "title": "Boba's for all",
+      "url": "https://bash.hackclub.com/built/journal-for-a-perfect-day-ovnspl"
+    },
+    {
+      "name": "Ali",
+      "title": "My portfolio",
+      "url": "https://bash.hackclub.com/built/my-portfolio-kbw0hv"
+    },
+    {
+      "name": "Muhammad Hamza",
+      "title": "Chocolate mart",
+      "url": "https://mhamza2008.github.io/chocolate-mart/"
+    },
+    {
+      "name": "Eshal Fatima",
+      "title": "My cat club",
+      "url": "https://bash.hackclub.com/built/my-cat-club-qokzg6"
+    },
+    {
+      "name": "Ayyan butt",
+      "title": "My favt animal",
+      "url": "https://bash.hackclub.com/built/drake-s-fan-page-renyz0"
+    },
+    {
+      "name": "ali talal shafiq",
+      "title": "my portfolio website",
+      "url": "https://bash.hackclub.com/built/my-portfolio-website-swrur3"
+    },
+    {
+      "name": "Hareem",
+      "title": "It is a website of handmade jewelry",
+      "url": "https://bash.hackclub.com/built/it-is-a-website-of-handmade-jewelry-xe9g9g"
+    },
+    {
+      "name": "Fatin Javed",
+      "title": "A digital service",
+      "url": "https://bash.hackclub.com/built/a-digital-service-lxijyl"
+    },
+    {
+      "name": "Abdullah Mohsin",
+      "title": "Demotivator \"The opposite site of motivation which demotivates you :)\"",
+      "url": "https://abdidev1.github.io/Demotivator/"
+    },
+    {
+      "name": "Izza shahzad",
+      "title": "home tuition services",
+      "url": "https://codi.link/PCFET0NUWVBFIGh0bWw+DQo8aHRtbCBsYW5nPSJlbiI+DQo8aGVhZD4NCiAgICA8bWV0YSBjaGFyc2V0PSJVVEYtOCI+DQogICAgPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLjAiPg0KICAgIDx0aXRsZT5Eb2N1bWVudDwvdGl0bGU+DQo8L2hlYWQ+DQo8Ym9keT4NCjxoMT5IZWxsbyBwYXJlbnRzIGFuZCBzdHVkZW50cy48L2gxPg0KPGgyPiBXZWxjb21lIHRvIG91ciB0dWl0aW9uLjwvaDI+DQo8aDM+IEJlc3QgdGVhY2hlcnMgYXQgeW91ciBob21lLiA8L2gzPg0KPGg0PiBHcmVhdCBzZXJ2aWNlcyBmb3IgeW91ciBjaGlsZC48L2g0Pg0KPGg1PiBIb21lIHR1aXRpb24gaXMgYmVzdCBmb3IgZ3JlYXQgbWFya3MuPC9oNT4NCg0KDQoNCjxpbWcgc3JjPSJodHRwczovL3d3dy5wb3N0ZXJteXdhbGwuY29tL2luZGV4LnBocC9wb3N0ZXJzL3NlYXJjaD9zPWhvbWUlMjB0dWl0aW9uIj48cD5vdXIgc2VydmljZSBhcmUgdmVyeSBncmVhdC5lZHVjYXRpb24gaXMgdGhlIGtleSB0byBzdWNjZXNzLmV2ZXJ5b25lIGhhdmUgYSByaWdodCB0byB0YWtlIGVkdWNhdGlvbi48L3A+DQoNCjwvYm9keT4NCjwvaHRtbD4=%7CYm9keXsgDQogIGJhY2tncm91bmQtY29sb3I6YmVpZ2U7DQogIGZvbnQtZmFtaWx5OiAnQ291cmllciBOZXcnIA0KDQp9DQpwew0KICBjb2xvcjogZ3JlZW47DQogIGZvbnQtc2l6ZToyNXB4DQp9DQoNCg0KDQo="
+    },
+    {
+      "name": "Aliza sarwar",
+      "title": "My page is about myself .basically it is a portfolio",
+      "url": "https://bash.hackclub.com/built/my-page-is-about-myself-basically-it-is-a-portfolio-wq1iqb"
+    },
+    {
+      "name": "Samavia sarwar",
+      "title": "My profile.",
+      "url": "https://bash.hackclub.com/built/my-profile-uxgxzf"
+    },
+    {
+      "name": "Amna Noor",
+      "title": "Solar System",
+      "url": "https://bash.hackclub.com/built/solar-system-cm5ird"
+    },
+    {
+      "name": "Muhammad Khuzaima",
+      "title": "My Portfolio",
+      "url": "https://bash.hackclub.com/built/my-portfolio-jmmx38"
+    },
+    {
+      "name": "Momina hammad",
+      "title": "just a page with a bit broken and love sick vibe poem",
+      "url": "https://bash.hackclub.com/built/just-a-page-with-a-bit-broken-and-love-sick-vibe-poem-9orcx2"
+    },
+    {
+      "name": "Shanzay Tahir",
+      "title": "My hobbie",
+      "url": "https://bash.hackclub.com/built/my-hobbie-wqwji8"
+    },
+    {
+      "name": "Rehan Sohail",
+      "title": "Rehan's Corner About my thoughts!",
+      "url": "https://skyx-hub.github.io/My-poetic-website/"
+    },
+    {
+      "name": "Husnain Khan",
+      "title": "Bruno fernandes fan page",
+      "url": "https://bash.hackclub.com/built/bruno-fernandes-fan-page-uoxhj9"
+    },
+    {
+      "name": "Hassan Ali Gondal",
+      "title": "My Site",
+      "url": "https://bash.hackclub.com/built/my-site-ptsnve"
+    },
+    {
+      "name": "Arman Ahmad",
+      "title": "A Gaming Website",
+      "url": "https://bash.hackclub.com/built/a-gaming-website-pjvilq"
+    },
+    {
+      "name": "Zoya ahsan",
+      "title": "Little Words",
+      "url": "https://bash.hackclub.com/built/little-words-k340li"
+    },
+    {
+      "name": "Imama Ahmad",
+      "title": "An interactive Boba cat café website",
+      "url": "https://bash.hackclub.com/built/an-interactive-boba-cat-cafe-website-qqlqgw"
+    },
+    {
+      "name": "Rumaisa Asif",
+      "title": "personal website with stuff about me/my interests",
+      "url": "https://bash.hackclub.com/built/personal-website-with-stuff-about-me-my-interests-61s3px"
+    },
+    {
+      "name": "Amna Hussain",
+      "title": "my 3 favorite types of cats",
+      "url": "https://bash.hackclub.com/built/my-3-favorite-types-of-cats-zfyjmz"
+    },
+    {
+      "name": "Muhammad Mustafa Rehan Alvi",
+      "title": "mustafas page",
+      "url": "https://bash.hackclub.com/built/mustafas-page-cojbsa"
+    },
+    {
+      "name": "Abdur Rehman Mazhar",
+      "title": "I honestly dont know",
+      "url": "https://bash.hackclub.com/built/i-honestly-dont-know-z9lspx"
+    },
+    {
+      "name": "Aliza Shahid",
+      "title": "Azalea Crochet",
+      "url": "https://bash.hackclub.com/built/azalea-crochet-03e97h"
+    },
+    {
+      "name": "Syed Muhammad Saad",
+      "title": "Memes",
+      "url": "https://saadi-ux.github.io/website/index.html"
+    },
+    {
+      "name": "Faiza",
+      "title": "Its about a clothing store",
+      "url": "https://bash.hackclub.com/built/its-about-a-clothing-store-whh6zl"
+    },
+    {
+      "name": "Saira Aman",
+      "title": "About movies",
+      "url": "https://bash.hackclub.com/built/about-movies-sofkut"
+    },
+    {
+      "name": "Aleezay Shoaib Khan",
+      "title": "K-pop fan page",
+      "url": "https://bash.hackclub.com/built/k-pop-fan-page-cn0tux"
+    },
+    {
+      "name": "Maera Ali",
+      "title": "random joke",
+      "url": "https://bash.hackclub.com/built/random-joke-5fal6z"
+    },
+    {
+      "name": "M. Shayan Nasir",
+      "title": "My First Website",
+      "url": "https://bash.hackclub.com/built/my-first-website-xnpswr"
+    },
+    {
+      "name": "Bakhtawar Fatima",
+      "title": "A page about a K-drama.",
+      "url": "https://bash.hackclub.com/built/a-page-about-a-k-drama-2k42zv"
+    },
+    {
+      "name": "Zummar Fatima",
+      "title": "Spiderman fan page",
+      "url": "https://bash.hackclub.com/built/spiderman-fan-page-kbi69q"
+    },
+    {
+      "name": "Abdur Rehman",
+      "title": "Pakistan Cricket Team",
+      "url": "https://bash.hackclub.com/built/pakistan-cricket-team-pc82cf"
+    },
+    {
+      "name": "Muhammad Ibrahim",
+      "title": "Cosmic Exploration",
+      "url": "https://bash.hackclub.com/built/planet-exploration-lt0c8o"
+    },
+    {
+      "name": "Rayyan Ahmad",
+      "title": "My favorite Boba tea flavors page",
+      "url": "https://bash.hackclub.com/built/my-favorite-boba-tea-flavors-page-yvrhon"
+    },
+    {
+      "name": "Rehan Ateeq",
+      "title": "My first hackathon small project",
+      "url": "https://bash.hackclub.com/built/my-first-hackathon-small-project-ltanyj"
+    },
+    {
+      "name": "Muhammad Hamza Tahir Rana",
+      "title": "My Retro Arcade page",
+      "url": "https://mhamzatahir.github.io/bento/"
+    },
+    {
+      "name": "Amaim Zia",
+      "title": "About Me",
+      "url": "https://amaimzia10.github.io/website/"
+    },
+    {
+      "name": "Ammar Kansi",
+      "title": "Attack on Titan Militia",
+      "url": "https://ammarkansi.github.io/Bento/index.html"
+    },
+    {
+      "name": "Ayra Salman",
+      "title": "Damon Salvatore Crash Course",
+      "url": "https://bash.hackclub.com/built/its-a-y2k-outfit-creator-that-features-clothing-items-and-ac-i9lqjo"
+    },
+    {
+      "name": "Abeha Atif",
+      "title": "About casper",
+      "url": "https://bash.hackclub.com/built/my-cat-counts-ybxrar"
+    },
+    {
+      "name": "Zainab",
+      "title": "My paeg",
+      "url": "https://bash.hackclub.com/built/my-paeg-5vy4kz"
+    },
+    {
+      "name": "Ramien Shaikh",
+      "title": "A page about Lityerses, my favourite character",
+      "url": "https://bash.hackclub.com/built/a-page-about-lityerses-my-favourite-character-otck2v"
+    },
+    {
+      "name": "Fajar Nauman",
+      "title": "The weird internet museum:)",
+      "url": "https://bash.hackclub.com/built/the-weird-internet-museum-urcb0h"
+    },
+    {
+      "name": "Wajiha Umer",
+      "title": "leadership",
+      "url": "https://bash.hackclub.com/built/leadership-2f7ow1"
+    },
+    {
+      "name": "Chaudhry Ali Raza",
+      "title": "who am i",
+      "url": "https://bash.hackclub.com/built/who-am-i-kxzzm9"
+    },
+    {
+      "name": "Haider Alvi",
+      "title": "my minecraft page",
+      "url": "https://bash.hackclub.com/built/my-minecraft-page-emjs1g"
+    },
+    {
+      "name": "Aiman Wadood",
+      "title": "My first time making a website",
+      "url": "https://bash.hackclub.com/built/my-first-time-making-a-website-71xsse"
+    },
+    {
+      "name": "Saira Tariq",
+      "title": "MY FIRST WEBSITE",
+      "url": "https://bash.hackclub.com/built/my-first-website-dajtss"
+    }
+  ],
+  "postEvent": [
+    {
+      "name": "Chai Dhaba",
+      "members": "Ayyan and daniyal",
+      "method": "Paste HTML, CSS & JavaScript",
+      "url": "./chai-dhaba/index.html"
+    },
+    {
+      "name": "King of skies",
+      "members": "Muhammad Hamza",
+      "method": "Link to my website",
+      "url": "https://mhamza2008.github.io/king-of-skies/"
+    },
+    {
+      "name": "67 gang",
+      "members": "Minahil, Faiza, Wajiha",
+      "method": "Paste HTML, CSS & JavaScript",
+      "url": "./67-gang/index.html"
+    },
+    {
+      "name": "The LARP",
+      "members": "Ammar Kansi",
+      "method": "Link to my website",
+      "url": "https://ammarkansi.github.io/Boba-Bash/"
+    },
+    {
+      "name": "abdullah waheed team",
+      "members": "Abdullah Waheed",
+      "method": "Upload a ZIP file",
+      "url": "./abdullah-waheed-team/index.html"
+    },
+    {
+      "name": "MSN",
+      "members": "Muhammad Shayan Nasir",
+      "method": "Paste HTML, CSS & JavaScript",
+      "url": "./msn/index.html"
+    },
+    {
+      "name": "Zara Tariq ",
+      "members": "Zara Tariq Amina Tariq",
+      "method": "Link to my website",
+      "url": "https://zaraaztariq326-ux.github.io/Halloween-scare/"
+    },
+    {
+      "name": "Kinderjoy",
+      "members": "Samavia,Aliza",
+      "method": "Link to my website",
+      "url": "https://onecompiler.com/html/456eezmr6"
+    },
+    {
+      "name": "Coffee expert",
+      "members": "Eshal",
+      "method": "Paste HTML, CSS & JavaScript",
+      "url": "./coffee-expert/index.html"
+    },
+    {
+      "name": "Creative Cockroaches",
+      "members": "Sarwar, Hamza, Moazzam",
+      "method": "Paste HTML, CSS & JavaScript",
+      "url": "./creative-cockroaches/index.html"
+    },
+    {
+      "name": "chill team",
+      "members": "Aleezay asim",
+      "method": "Paste HTML, CSS & JavaScript",
+      "url": "./chill-team/index.html"
+    },
+    {
+      "name": "ROBLOX TEAM",
+      "members": "IZZA, AROOSH",
+      "method": "Paste HTML, CSS & JavaScript",
+      "url": "./roblox-team/index.html"
+    },
+    {
+      "name": "Fatimaaaaa",
+      "members": "Fatima masood",
+      "method": "Link to my website",
+      "url": "https://oniontrue.github.io/boba-bash-scare/"
+    },
+    {
+      "name": "<i>(not)</i> individual",
+      "members": "Eemaan, Imama Ahmad & Haleema",
+      "method": "Paste HTML, CSS & JavaScript",
+      "url": "./individual/index.html"
+    },
+    {
+      "name": "rumiixx",
+      "members": "Rumaisa Asif",
+      "method": "Paste HTML, CSS & JavaScript",
+      "url": "./rumiixx/index.html"
+    },
+    {
+      "name": "kitty cats",
+      "members": "Amna (me)",
+      "method": "Paste HTML, CSS & JavaScript",
+      "url": "./kitty-cats/index.html"
+    },
+    {
+      "name": "Azalea Crochet",
+      "members": "Aliza Shahid",
+      "method": "Paste HTML, CSS & JavaScript",
+      "url": "./azalea-crochet/index.html"
+    },
+    {
+      "name": "3 Brain Cells",
+      "members": "Khuzaima Khan, Hussnain Ali, Ali Hassan",
+      "method": "Paste HTML, CSS & JavaScript",
+      "url": "./3-brain-cells/index.html"
+    },
+    {
+      "name": "leo king",
+      "members": "hareem, zainab",
+      "method": "Paste HTML, CSS & JavaScript",
+      "url": "./leo-king/index.html"
+    },
+    {
+      "name": " Rayyan Ahmad ",
+      "members": "Rayyan Ahmad",
+      "method": "Paste HTML, CSS & JavaScript",
+      "url": "./rayyan-ahmad/index.html"
+    },
+    {
+      "name": "Eimannhadi",
+      "members": "Eiman, Hadi",
+      "method": "Paste HTML, CSS & JavaScript",
+      "url": "./eimannhadi/index.html"
+    },
+    {
+      "name": "Boba Team",
+      "members": "Muhammad Ibrahim",
+      "method": "Upload a ZIP file",
+      "url": "./boba-team/index.html"
+    },
+    {
+      "name": "jutt gang",
+      "members": "Anas Jutt",
+      "method": "Upload a ZIP file",
+      "url": "./jutt-gang/index.html"
+    },
+    {
+      "name": "Fromsite",
+      "members": "Syed Muhammad Saad",
+      "method": "Link to my website",
+      "url": "https://saadi-ux.github.io/bobabash/"
+    },
+    {
+      "name": "AbdurRehman",
+      "members": "Abdur Rehman",
+      "method": "Upload a ZIP file",
+      "url": "./abdurrehman/index.html"
+    },
+    {
+      "name": "Useless team",
+      "members": "Fatin and shanzay",
+      "method": "Link to my website",
+      "url": "https://onecompiler.com/html/456ewg9c8"
+    },
+    {
+      "name": "rubabni&sairahni",
+      "members": "rubab, sairah",
+      "method": "Upload a ZIP file",
+      "url": "./rubabni-sairahni/index.html"
+    },
+    {
+      "name": "Lycheez",
+      "members": "Bakhtawar",
+      "method": "Paste HTML, CSS & JavaScript",
+      "url": "./lycheez/index.html"
+    },
+    {
+      "name": "SLIDER",
+      "members": "mark, steve",
+      "method": "Upload a ZIP file",
+      "url": "./slider/index.html"
+    },
+    {
+      "name": "Ghulam Mustafa",
+      "members": "Ghulam Mustafa",
+      "method": "Upload a ZIP file",
+      "url": "./ghulam-mustafa/index.html"
+    },
+    {
+      "name": "shrek",
+      "members": "maera ali, anaya rashid, abeera javed",
+      "method": "Link to my website",
+      "url": "https://maeraali.github.io/shrek-s-affirmations/"
+    },
+    {
+      "name": "Somsom",
+      "members": "Sumaiya Shahzad",
+      "method": "Paste HTML, CSS & JavaScript",
+      "url": "./somsom/index.html"
+    },
+    {
+      "name": "project socialization",
+      "members": "samar jamil",
+      "method": "Upload a ZIP file",
+      "url": "./project-socialization/index.html"
+    },
+    {
+      "name": "67 tiki tik aura masters ",
+      "members": "ME haider rehan alvi",
+      "method": "Paste HTML, CSS & JavaScript",
+      "url": "./67-tiki-tik-aura-masters/index.html"
+    },
+    {
+      "name": "amna noor",
+      "members": "amna noor",
+      "method": "Paste HTML, CSS & JavaScript",
+      "url": "./amna-noor/index.html"
+    }
+  ]
+}

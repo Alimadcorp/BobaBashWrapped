@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boba Bash Lahore Ships</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Phantom+Sans:wght@400;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #cbebfa;
+        background-image: linear-gradient(
+            rgba(180, 220, 240, 0.5) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(180, 220, 240, 0.5) 1px, transparent 1px);
+        background-size: 30px 30px;
+        font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+        color: #252429;
+        padding-bottom: 60px;
+      }
+      header {
+        background: #fff;
+        border-bottom: 2px solid #252429;
+        padding: 12px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .flag {
+        background: #ec3750;
+        color: white;
+        font-weight: 800;
+        padding: 6px 14px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 18px;
+        letter-spacing: -0.5px;
+        display: inline-block;
+        transform: rotate(-2deg);
+      }
+      nav a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: #252429;
+        font-weight: 700;
+      }
+      .btn-dash {
+        background: #f1c40f;
+        border: 2px solid #252429;
+        padding: 6px 16px;
+        border-radius: 6px;
+        box-shadow: 2px 2px 0px #252429;
+      }
+      .main-layout {
+        max-width: 1100px;
+        margin: 40px auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 20px;
+      }
+      .card {
+        background: #fdfaf0;
+        border: 2px solid #252429;
+        border-radius: 8px;
+        box-shadow: 5px 5px 0px #252429;
+        padding: 30px;
+      }
+      h1 {
+        color: #338da8;
+        font-size: 42px;
+        margin-bottom: 15px;
+        line-height: 1.1;
+      }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+        margin: 25px 0 35px 0;
+      }
+      .stat-box {
+        background: #fff;
+        border: 2px solid #252429;
+        padding: 15px;
+        border-radius: 6px;
+        text-align: center;
+        box-shadow: 3px 3px 0px #252429;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .stat-number {
+        font-size: 36px;
+        font-weight: 800;
+        color: #ec3750;
+      }
+      .stat-label {
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #555;
+        margin-top: 4px;
+      }
+      .chart-container {
+        background: #fff;
+        border: 2px solid #252429;
+        border-radius: 6px;
+        padding: 20px;
+        box-shadow: 4px 4px 0px #252429;
+        margin-bottom: 40px;
+      }
+      h2 {
+        font-size: 26px;
+        border-bottom: 3px solid #f1c40f;
+        display: inline-block;
+        margin-bottom: 20px;
+        margin-top: 10px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+      .submission-card {
+        background: white;
+        border: 2px solid #252429;
+        border-radius: 6px;
+        padding: 18px;
+        box-shadow: 3px 3px 0px #252429;
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        transition: transform 0.1s;
+      }
+      .submission-card:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 5px 5px 0px #252429;
+      }
+      .sub-name {
+        font-size: 20px;
+        font-weight: 700;
+        color: #338da8;
+        margin-bottom: 4px;
+      }
+      .sub-members,
+      .badge {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 10px;
+        font-weight: 500;
+      }
+      button {
+        display: inline-block;
+        background: #e0f2fe;
+        color: #0369a1;
+        cursor: pointer;
+        border: 1px solid #0284c7;
+        padding: 4px 10px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+      button:hover {
+        background: #60bfff;
+      }
+      .voted {
+        background: #85ff60;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="https://hackclub.com" class="flag">HACK CLUB</a>
+      <nav>
+        <a href="https://bash.hackclub.com/events/lahore/submissions"
+          >pre-event ships</a
+        >
+        <a href="/">home</a>
+      </nav>
+    </header>
+
+    <div class="main-layout">
+      <div class="card">
+        <h1>Boba Bash Lahore Ships</h1>
+        <p style="font-size: 18px; color: #444">
+          The websites that participants made, on the day-of!
+        </p>
+
+        <div class="stats-grid" style="display: none">
+          <div class="stat-box">
+            <div class="stat-number" id="checked-in-count">-</div>
+            <div class="stat-label">Total Checked In</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number" id="pre-count">-</div>
+            <div class="stat-label">Pre-Event Ships</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number" id="post-count">-</div>
+            <div class="stat-label">Day-Of Ships</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number" id="avg-rating">-</div>
+            <div class="stat-label">Avg NPS</div>
+          </div>
+          <div class="stat-box" style="display: none">
+            <div
+              class="stat-number"
+              style="font-size: 24px; padding-top: 10px"
+              id="top-method"
+            >
+              -
+            </div>
+            <div class="stat-label">Top Submit Method</div>
+          </div>
+        </div>
+
+        <div class="chart-container" style="display: none">
+          <h2 style="border-bottom: 3px solid #ec3750; margin-top: 0">
+            Cumulative Signups
+          </h2>
+          <canvas id="signupsChart" height="80"></canvas>
+        </div>
+
+        <a href="/ships" style="display: none"
+          ><h2 id="post-wall">Click to view day-of ships</h2></a
+        >
+        <div class="grid" id="post-wall-grid" style="margin-top: 20px"></div>
+      </div>
+    </div>
+
+    <script>
+      // Helper to get stored votes from local storage
+      function getVotes() {
+        return JSON.parse(localStorage.getItem('boba_votes') || '{}')
+      }
+
+      function upvote(url, container, event) {
+        event.preventDefault()
+        event.stopPropagation()
+
+        const votes = getVotes()
+        if (votes[url]) return // Prevent if already voted
+
+        // Log the upvote
+        fetch(
+          'https://log.alimad.co/api/log?channel=bblv&text=upvote:' +
+            encodeURIComponent(url)
+        )
+
+        // Save to local storage
+        votes[url] = 'up'
+        localStorage.setItem('boba_votes', JSON.stringify(votes))
+
+        // Update UI to show 'Voted' and hide buttons
+        container.innerHTML = `<span style="font-size: 12px; font-weight: 700; color: #0369a1; background: #e0f2fe; padding: 4px 10px; border-radius: 12px; border: 1px solid #0284c7;">✓ Voted</span>`
+      }
+
+      function downvote(url, container, event) {
+        event.preventDefault()
+        event.stopPropagation()
+
+        const votes = getVotes()
+        if (votes[url]) return // Prevent if already voted
+
+        // Log the downvote
+        fetch(
+          'https://log.alimad.co/api/log?channel=bblv&text=downvote:' +
+            encodeURIComponent(url)
+        )
+
+        // Save to local storage
+        votes[url] = 'down'
+        localStorage.setItem('boba_votes', JSON.stringify(votes))
+
+        // Update UI to show 'Voted' and hide buttons
+        container.innerHTML = `<span style="font-size: 12px; font-weight: 700; color: #0369a1; background: #e0f2fe; padding: 4px 10px; border-radius: 12px; border: 1px solid #0284c7;">✓ Voted</span>`
+      }
+
+      fetch('data.json')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('checked-in-count').innerText =
+            data.stats.checkedIn
+          document.getElementById('pre-count').innerText = data.stats.preCount
+          document.getElementById('post-count').innerText =
+            data.postEvent.length
+          document.getElementById('avg-rating').innerText =
+            data.stats.avgRating + '/10'
+          document.getElementById('top-method').innerText = data.stats.topMethod
+
+          const postWall = document.getElementById('post-wall-grid')
+          const savedVotes = getVotes()
+
+          data.postEvent.forEach(item => {
+            const el = document.createElement('div')
+            el.className = 'submission-card'
+            let _href = item.url
+            let _target = item.url.startsWith('./') ? '_self' : '_blank'
+            const membersHtml = item.members
+              ? `<div class="sub-members">${item.members}</div>`
+              : ''
+
+            // Check if user has already voted on this specific item
+            const hasVoted = savedVotes[item.url] !== undefined
+
+            let actionHtml = ''
+            if (hasVoted) {
+              actionHtml = `<span style="font-size: 12px; font-weight: 700; color: #0369a1; background: #e0f2fe; padding: 4px 10px; border-radius: 12px; border: 1px solid #0284c7;">✓ Voted</span>`
+            } else {
+              actionHtml = `
+                    <button onclick="upvote('${item.url}', this.parentElement, event)">Upvote</button>
+                    <button class="db" onclick="downvote('${item.url}', this.parentElement, event)">Downvote</button>
+                `
+            }
+
+            el.innerHTML = `
+                <a href="${_href}" target="${_target}" class="sub-name" style="text-decoration:none; display:block;">${
+              item.name
+            }</a>
+                ${membersHtml}
+                <div class="badge" style="display: none">
+                    ${
+                      item.method.includes('Paste')
+                        ? 'Hosted locally'
+                        : item.method.includes('ZIP')
+                        ? 'Extracted ZIP'
+                        : 'External Link'
+                    }
+                </div>
+                <div style="margin-top: 10px;">
+                    ${actionHtml}
+                </div>
+            `
+            postWall.appendChild(el)
+          })
+        })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1191 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Whiskers & Boba</title>
+
+<style>
+
+{
+
+box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #49352a; background: #fff8ed; }
+
+a { color: inherit; }
+
+/* ================= NAVIGATION ================= */
+
+nav { position: sticky; top: 0; z-index: 100;
+
+display: flex; align-items: center; justify-content: space-between;
+
+padding: 17px 7%;
+
+background: rgba(255, 248, 237, 0.96); border-bottom: 2px solid #efd8ca; }
+
+.logo { font-size: 22px; font-weight: 800; }
+
+.nav-links { display: flex; gap: 25px; }
+
+.nav-links a { text-decoration: none; font-size: 15px; font-weight: bold; }
+
+.nav-links a:hover { color: #d8758d; }
+
+/* ================= HERO ================= */
+
+header { min-height: 100vh; position: relative; overflow: hidden;
+
+padding: 75px 6% 110px;
+
+background: radial-gradient(circle at 10% 20%, #ffd7e0 0 70px, transparent 71px), radial-gradient(circle at 90% 25%, #e4edcf 0 85px, transparent 86px), #fff8ed; }
+
+.hero-text { position: relative; z-index: 5; text-align: center; }
+
+.welcome { color: #d8758d; font-size: 15px; font-weight: bold; letter-spacing: 2px; }
+
+.hero-text h1 { margin: 18px 0; color: #5a4033; font-size: clamp(55px, 10vw, 105px); line-height: .86; }
+
+.hero-text p:not(.welcome) { max-width: 600px; margin: 0 auto; font-size: 19px; line-height: 1.6; }
+
+.button { display: inline-block; margin-top: 25px; padding: 15px 28px;
+
+color: white; background: #ff9eb5;
+
+border-radius: 30px; text-decoration: none; font-weight: bold;
+
+transition: .2s; }
+
+.button:hover { background: #ef7896; transform: translateY(-4px); }
+
+/* ================= CAFE ================= */
+
+.cafe { position: relative;
+
+max-width: 900px; height: 390px;
+
+margin: 75px auto 0;
+
+background: #f3d5b9;
+
+border: 5px solid #49352a; border-bottom: none;
+
+border-radius: 35px 35px 0 0;
+
+box-shadow: 0 20px 0 #e8b997; }
+
+.roof { position: absolute; left: -4%; top: -30px;
+
+width: 108%; height: 36px;
+
+background: #ff9eb5;
+
+border: 4px solid #49352a; border-radius: 20px; }
+
+.sign { position: absolute;
+
+left: 50%; top: 25px;
+
+transform: translateX(-50%);
+
+width: 300px;
+
+padding: 13px;
+
+text-align: center;
+
+font-size: 22px; font-weight: bold;
+
+background: #fff8ed;
+
+border: 4px solid #49352a; border-radius: 15px;
+
+box-shadow: 5px 5px 0 #d7a687; }
+
+.window { position: absolute;
+
+top: 125px;
+
+width: 150px; height: 135px;
+
+background: #d7eef0;
+
+border: 5px solid #49352a; border-radius: 18px; }
+
+.window.left { left: 55px; }
+
+.window.right { right: 55px; }
+
+.window:before { content: ""; position: absolute; left: 50%; top: 0; width: 5px; height: 100%; background: #49352a; }
+
+.window:after { content: ""; position: absolute; left: 0; top: 50%; width: 100%; height: 5px; background: #49352a; }
+
+.door { position: absolute;
+
+left: 50%; bottom: 0;
+
+transform: translateX(-50%);
+
+width: 190px; height: 190px;
+
+background: #9a755d;
+
+border: 5px solid #49352a; border-radius: 18px 18px 0 0; }
+
+.door-window { position: absolute;
+
+left: 25px; top: 20px;
+
+width: 130px; height: 85px;
+
+background: #d7eef0;
+
+border: 4px solid #49352a; border-radius: 12px; }
+
+.door-handle { position: absolute;
+
+right: 20px; top: 115px;
+
+width: 12px; height: 12px;
+
+background: #f6d27c;
+
+border: 2px solid #49352a; border-radius: 50%; }
+
+.cup { position: absolute; bottom: 18px;
+
+width: 48px; height: 72px;
+
+border: 3px solid #49352a; border-radius: 5px 5px 15px 15px;
+
+z-index: 4; }
+
+.cup:before { content: ""; position: absolute;
+
+left: 5px; top: -10px;
+
+width: 32px; height: 9px;
+
+background: #49352a; border-radius: 5px; }
+
+.cup:after { content: "";
+
+position: absolute;
+
+left: 7px; bottom: 8px;
+
+width: 7px; height: 7px;
+
+background: #49352a;
+
+border-radius: 50%;
+
+box-shadow: 13px 0 #49352a, 25px 0 #49352a, 6px 12px #49352a, 20px 12px #49352a; }
+
+.cup.one { left: 17%; background: #ffc0d1; }
+
+.cup.two { right: 17%; background: #cdb7ed; }
+
+.plant { position: absolute;
+
+bottom: 15px;
+
+width: 75px; height: 70px;
+
+background: #d28d67;
+
+border: 4px solid #49352a; border-radius: 10px 10px 20px 20px; }
+
+.plant.left { left: 5%; }
+
+.plant.right { right: 5%; }
+
+.leaf { position: absolute;
+
+width: 35px; height: 55px;
+
+background: #91ad72;
+
+border: 3px solid #49352a;
+
+border-radius: 100% 0 100% 0; }
+
+.leaf.one { left: 0; top: -45px; transform: rotate(-25deg); }
+
+.leaf.two { right: 0; top: -50px; transform: rotate(30deg); }
+
+.leaf.three { left: 22px; top: -65px; }
+
+/* ================= SPECIAL ================= */
+
+.special { padding: 75px 20px; text-align: center;
+
+color: white; background: #b99bea; }
+
+.special h2 { margin: 12px 0; font-size: 42px; }
+
+/* ================= SECTIONS ================= */
+
+section { padding: 100px 8%; text-align: center; }
+
+section h2 { margin-top: 10px; font-size: 45px; }
+
+/* ================= MENU ================= */
+
+.menu-container { display: grid;
+
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+gap: 25px;
+
+max-width: 1000px;
+
+margin: 50px auto 0; }
+
+.drink { padding: 32px;
+
+background: white;
+
+border-radius: 25px;
+
+box-shadow: 0 10px 30px rgba(80, 50, 30, .08);
+
+transition: .25s; }
+
+.drink:hover { transform: translateY(-8px) rotate(-1deg); }
+
+.drink h3 { font-size: 23px; }
+
+.drink p { color: #765f52; line-height: 1.6; }
+
+.drink strong { color: #d8758d; }
+
+/* ================= CATS ================= */
+
+.cats { background: #eaf2df; }
+
+.cat-container { display: grid;
+
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+gap: 30px;
+
+max-width: 950px;
+
+margin: 55px auto 0; }
+
+.cat { padding: 35px 25px;
+
+background: #fff8ed;
+
+border: 2px dashed #c5d6ac;
+
+border-radius: 30px;
+
+transition: .25s; }
+
+.cat:hover { transform: translateY(-8px); }
+
+.cat h3 { margin: 10px 0 5px; font-size: 25px; }
+
+.cat details { margin-top: 20px; }
+
+.cat summary { cursor: pointer; color: #8c6cae; font-weight: bold; }
+
+/* ================= CSS CAT DRAWING ================= */
+
+.cat-picture { position: relative;
+
+width: 150px; height: 140px;
+
+margin: auto; }
+
+.cat-head { position: absolute;
+
+left: 18px; top: 25px;
+
+width: 115px; height: 105px;
+
+background: #f2c99d;
+
+border: 3px solid #49352a;
+
+border-radius: 48%; }
+
+.cat-ear-left, .cat-ear-right { position: absolute;
+
+top: 4px;
+
+width: 45px; height: 45px;
+
+background: #f2c99d;
+
+border: 3px solid #49352a; }
+
+.cat-ear-left { left: 20px; transform: rotate(-28deg); border-radius: 8px 30px 5px 5px; }
+
+.cat-ear-right { right: 20px; transform: rotate(28deg); border-radius: 30px 8px 5px 5px; }
+
+.cat-eye-left, .cat-eye-right { position: absolute;
+
+top: 58px;
+
+width: 11px; height: 15px;
+
+background: #49352a;
+
+border-radius: 50%;
+
+z-index: 3; }
+
+.cat-eye-left { left: 47px; }
+
+.cat-eye-right { right: 47px; }
+
+.cat-nose { position: absolute;
+
+left: 51px; top: 76px;
+
+width: 12px; height: 9px;
+
+background: #d8758d;
+
+border-radius: 50%;
+
+z-index: 3; }
+
+.cat-mouth { position: absolute;
+
+left: 48px; top: 84px;
+
+width: 18px; height: 9px;
+
+border-bottom: 2px solid #49352a;
+
+border-radius: 50%;
+
+z-index: 3; }
+
+/* ================= MILO ================= */
+
+.milo .cat-head, .milo .cat-ear-left, .milo .cat-ear-right { background: #d89055; }
+
+.milo .cat-eye-left, .milo .cat-eye-right { top: 63px; height: 5px; }
+
+/* ================= PIDDU ================= */
+
+.piddu-photo { display: block;
+
+width: 170px; height: 170px;
+
+margin: 25px auto 10px;
+
+object-fit: cover;
+
+border-radius: 50%;
+
+border: 5px solid #49352a;
+
+box-shadow: 5px 5px 0 #d7a687; }
+
+/* ================= LUNA ================= */
+
+.luna .cat-head, .luna .cat-ear-left, .luna .cat-ear-right { background: #77727d; }
+
+.luna .cat-eye-left, .luna .cat-eye-right { background: #eaf2a1; }
+
+/* ================= STORY ================= */
+
+.story { background: #fff8ed; }
+
+.story-box { max-width: 750px;
+
+margin: 40px auto 0;
+
+padding: 40px;
+
+background: white;
+
+border-radius: 30px;
+
+box-shadow: 0 10px 35px rgba(80, 50, 30, .07); }
+
+.story-box p { font-size: 18px; line-height: 1.8; color: #6c584c; }
+
+/* ================= BUILDER ================= */
+
+#builder { background: #fff0f5; }
+
+.builder-box { max-width: 900px;
+
+margin: 45px auto 0;
+
+padding: 45px;
+
+background: #fff8ed;
+
+border-radius: 35px;
+
+box-shadow: 0 15px 45px rgba(80, 50, 30, .10); }
+
+.builder-box h3 { margin-top: 30px; font-size: 22px; }
+
+.choices { display: flex; flex-wrap: wrap; justify-content: center;
+
+gap: 12px;
+
+margin-top: 20px; }
+
+.choices input { position: absolute; opacity: 0; pointer-events: none; }
+
+.choices label { display: inline-block;
+
+padding: 15px 22px;
+
+background: white;
+
+border: 2px solid #f0d6df;
+
+border-radius: 20px;
+
+cursor: pointer;
+
+font-weight: bold;
+
+transition: .2s; }
+
+.choices label:hover { transform: translateY(-3px); }
+
+#milk:checked + label, #matcha:checked + label, #strawberry:checked + label, #boba:checked + label, #jelly:checked + label, #popping:checked + label { color: white;
+
+background: #ff9eb5;
+
+border-color: #ff9eb5;
+
+transform: translateY(-3px);
+
+box-shadow: 0 7px 15px rgba(255, 158, 181, .3); }
+
+/* ================= ORDER CARD ================= */
+
+.order-card { margin-top: 45px;
+
+padding: 35px;
+
+min-height: 400px;
+
+background: #eaf2df;
+
+border: 3px dashed #b5c99a;
+
+border-radius: 30px; }
+
+.order-card h3 { font-size: 27px; }
+
+.result { display: none; }
+
+/* CSS-ONLY COMBINATION SYSTEM */
+
+.builder-box:has(#milk:checked):has(#boba:checked) .milk-boba-result, .builder-box:has(#milk:checked):has(#jelly:checked) .milk-jelly-result, .builder-box:has(#milk:checked):has(#popping:checked) .milk-popping-result, .builder-box:has(#matcha:checked):has(#boba:checked) .matcha-boba-result, .builder-box:has(#matcha:checked):has(#jelly:checked) .matcha-jelly-result, .builder-box:has(#matcha:checked):has(#popping:checked) .matcha-popping-result, .builder-box:has(#strawberry:checked):has(#boba:checked) .strawberry-boba-result, .builder-box:has(#strawberry:checked):has(#jelly:checked) .strawberry-jelly-result, .builder-box:has(#strawberry:checked):has(#popping:checked) .strawberry-popping-result { display: block; }
+
+/* ================= DRINK ILLUSTRATIONS ================= */
+
+.boba-cup { position: relative;
+
+width: 125px; height: 175px;
+
+margin: 0 auto 25px; }
+
+.boba-lid { position: absolute;
+
+top: 0; left: 10px;
+
+width: 105px; height: 18px;
+
+background: #49352a;
+
+border-radius: 10px;
+
+z-index: 3; }
+
+.boba-straw { position: absolute;
+
+top: -32px; left: 78px;
+
+width: 9px; height: 65px;
+
+background: #49352a;
+
+transform: rotate(8deg);
+
+border-radius: 5px;
+
+z-index: 4; }
+
+.boba-glass { position: absolute;
+
+left: 15px; top: 14px;
+
+width: 95px; height: 145px;
+
+border: 4px solid #49352a;
+
+border-radius: 10px 10px 25px 25px;
+
+overflow: hidden;
+
+background: #c9956d; }
+
+.boba-liquid { position: absolute;
+
+left: 0; bottom: 0;
+
+width: 100%; height: 125px;
+
+background: #c9956d; }
+
+.boba-pearls { position: absolute;
+
+left: 10px; bottom: 9px;
+
+width: 10px; height: 10px;
+
+background: #49352a;
+
+border-radius: 50%;
+
+box-shadow: 20px 5px #49352a, 42px 0 #49352a, 64px 7px #49352a, 10px 22px #49352a, 35px 28px #49352a, 58px 20px #49352a, 25px 45px #49352a, 70px 43px #49352a; }
+
+/* Milk */
+
+.milk-cup .boba-liquid { background: #c9956d; }
+
+.milk-cup .boba-glass { background: #e6c39f; }
+
+/* Matcha */
+
+.matcha-cup .boba-liquid { background: #9fb879; }
+
+.matcha-cup .boba-glass { background: #b7cf91; }
+
+/* Strawberry */
+
+.strawberry-cup .boba-liquid { background: #f59db5; }
+
+.strawberry-cup .boba-glass { background: #ffc0d1; }
+
+/* Jelly pieces */
+
+.jelly-cup .boba-liquid { background: #d59bb4; }
+
+.jelly-cup .boba-pearls { width: 13px; height: 8px;
+
+border-radius: 3px;
+
+background: #8e4d72;
+
+box-shadow: 22px 7px #8e4d72, 48px 0 #8e4d72, 68px 15px #8e4d72, 15px 28px #8e4d72, 42px 35px #8e4d72, 70px 32px #8e4d72, 30px 55px #8e4d72; }
+
+/* Popping pearls */
+
+.popping-cup .boba-pearls { width: 13px; height: 13px;
+
+background: #ff7f9d;
+
+box-shadow: 22px 4px #ffd15c, 47px 0 #7ed6d0, 70px 10px #c6a1ed, 10px 27px #ffd15c, 38px 33px #ff7f9d, 65px 30px #7ed6d0, 28px 55px #c6a1ed; }
+
+/* Strawberry topping */
+
+.strawberry-topping { position: absolute;
+
+top: 35px; left: 30px;
+
+width: 28px; height: 28px;
+
+background: #ff6f91;
+
+border: 3px solid #49352a;
+
+border-radius: 50% 50% 55% 55%;
+
+z-index: 2; }
+
+.strawberry-topping:before { content: "♥";
+
+position: absolute;
+
+color: #91ad72;
+
+font-size: 17px;
+
+top: -18px; left: 3px; }
+
+/* Matcha foam */
+
+.matcha-foam { position: absolute;
+
+top: 10px; left: 20px;
+
+width: 85px; height: 25px;
+
+background: #eaf2df;
+
+border: 3px solid #49352a;
+
+border-radius: 50%;
+
+z-index: 2; }
+
+/* ================= FOOTER ================= */
+
+footer { padding: 55px 20px;
+
+text-align: center;
+
+color: #fff8ed;
+
+background: #49352a; }
+
+footer p:first-child { font-size: 22px; font-weight: bold; }
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+nav { flex-direction: column; gap: 15px; }
+
+.nav-links { gap: 12px; font-size: 14px; }
+
+header { padding-left: 15px; padding-right: 15px; }
+
+.hero-text h1 { font-size: 60px; }
+
+.cafe { height: 300px; }
+
+.sign { width: 210px; font-size: 17px; }
+
+.window { width: 90px; height: 90px; top: 120px; }
+
+.window.left { left: 18px; }
+
+.window.right { right: 18px; }
+
+.door { width: 125px; height: 145px; }
+
+.door-window { width: 80px; height: 65px; left: 18px; }
+
+.cup.one { left: 5%; }
+
+.cup.two { right: 5%; }
+
+section h2 { font-size: 35px; }
+
+.builder-box { padding: 25px 15px; }
+
+.piddu-photo { width: 140px; height: 140px; } }
+
+</style> </head>
+
+<body>
+
+<!-- ================= NAV ================= -->
+
+<nav>
+
+<div class="logo"> 🐾 Whiskers & Boba </div>
+
+<div class="nav-links"> <a href="#home">Home</a> <a href="#menu">Menu</a> <a href="#cats">Cats</a> <a href="#builder">Make a drink</a> </div>
+
+</nav>
+
+<!-- ================= HOME ================= -->
+
+<header id="home">
+
+<div class="hero-text">
+
+<p class="welcome"> Welcome in 🐾 </p>
+
+<h1> Whiskers<br>& Boba </h1>
+
+<p> The world's tiniest boba café, run entirely by cats. </p>
+
+<a href="#menu" class="button"> See the menu </a>
+
+</div>
+
+<div class="cafe">
+
+<div class="roof"></div>
+
+<div class="sign"> Whiskers & Boba </div>
+
+<div class="window left"></div> <div class="window right"></div>
+
+<div class="door"> <div class="door-window"></div> <div class="door-handle"></div> </div>
+
+<div class="plant left"> <div class="leaf one"></div> <div class="leaf two"></div> <div class="leaf three"></div> </div>
+
+<div class="plant right"> <div class="leaf one"></div> <div class="leaf two"></div> <div class="leaf three"></div> </div>
+
+<div class="cup one"></div> <div class="cup two"></div>
+
+</div>
+
+</header>
+
+<!-- ================= SPECIAL ================= -->
+
+<section class="special">
+
+<p> Today's special </p>
+
+<h2> Strawberry Milk </h2>
+
+<p> Fresh strawberry milk with a creamy finish. </p>
+
+<p> <strong>Rs. 450</strong> </p>
+
+</section>
+
+<!-- ================= MENU ================= -->
+
+<section id="menu">
+
+<p>Our menu</p>
+
+<h2>Drinks</h2>
+
+<div class="menu-container">
+
+<div class="drink">
+
+<h3>Taro Milk Tea</h3>
+
+<p> Creamy, lightly sweet, and smooth. </p>
+
+<strong>Rs. 450</strong>
+
+</div>
+
+<div class="drink">
+
+<h3>Strawberry Milk</h3>
+
+<p> Cold strawberry milk with a soft sweetness. </p>
+
+<strong>Rs. 400</strong>
+
+</div>
+
+<div class="drink">
+
+<h3>Mango Milk Tea</h3>
+
+<p> Fruity mango blended with creamy milk tea. </p>
+
+<strong>Rs. 420</strong>
+
+</div>
+
+<div class="drink">
+
+<h3>Matcha Latte</h3>
+
+<p> Smooth matcha with creamy milk. </p>
+
+<strong>Rs. 500</strong>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CATS ================= -->
+
+<section id="cats" class="cats">
+
+<p>Meet the cats 🐱</p>
+
+<h2>Our staff</h2>
+
+<div class="cat-container">
+
+<!-- MOCHI -->
+
+<div class="cat">
+
+<div class="cat-picture">
+
+<div class="cat-ear-left"></div> <div class="cat-ear-right"></div>
+
+<div class="cat-head">
+
+<div class="cat-eye-left"></div> <div class="cat-eye-right"></div>
+
+<div class="cat-nose"></div> <div class="cat-mouth"></div>
+
+</div>
+
+</div>
+
+<h3>Mochi</h3>
+
+<p>Head barista</p>
+
+<details>
+
+<summary>More about Mochi</summary>
+
+<p> Very confident. Has never made a drink. </p>
+
+</details>
+
+</div>
+
+<!-- MILO -->
+
+<div class="cat milo">
+
+<div class="cat-picture">
+
+<div class="cat-ear-left"></div> <div class="cat-ear-right"></div>
+
+<div class="cat-head">
+
+<div class="cat-eye-left"></div> <div class="cat-eye-right"></div>
+
+<div class="cat-nose"></div> <div class="cat-mouth"></div>
+
+</div>
+
+</div>
+
+<h3>Milo</h3>
+
+<p>Café manager</p>
+
+<details>
+
+<summary>More about Milo</summary>
+
+<p> Mostly manages the café from a sunny chair. </p>
+
+</details>
+
+<!-- PIDDU'S ACTUAL PHOTO -->
+
+<img src="piddu.jpg" alt="Piddu, my ginger and white cat" class="piddu-photo" >
+
+<p> Piddu </p>
+
+<p> My cat and the inspiration behind Milo. </p>
+
+</div>
+
+<!-- LUNA -->
+
+<div class="cat luna">
+
+<div class="cat-picture">
+
+<div class="cat-ear-left"></div> <div class="cat-ear-right"></div>
+
+<div class="cat-head">
+
+<div class="cat-eye-left"></div> <div class="cat-eye-right"></div>
+
+<div class="cat-nose"></div> <div class="cat-mouth"></div>
+
+</div>
+
+</div>
+
+<h3>Luna</h3>
+
+<p>Snack manager</p>
+
+<details>
+
+<summary>More about Luna</summary>
+
+<p> Takes her job seriously. Especially the matcha. </p>
+
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= STORY ================= -->
+
+<section class="story">
+
+<p>A little about this project</p>
+
+<h2>Why a cat cafe????</h2>
+
+<div class="story-box">
+
+<p> Whiskers & Boba was created for Boba Bash with two things I really enjoy: coding and cats. </p>
+
+<p> I wanted to turn a simple web project into a small interactive game so here is my project!! </p>
+
+<p> P.S. Send some love to Piddu. </p>
+
+</div>
+
+</section>
+
+<!-- ================= BUILDER ================= -->
+
+<section id="builder">
+
+<p>Make a drink</p>
+
+<h2>Build your boba</h2>
+
+<p> Choose your tea and topping. </p>
+
+<div class="builder-box">
+
+<h3>Choose your tea</h3>
+
+<div class="choices">
+
+<input type="radio" name="tea" id="milk" checked> <label for="milk">🥛 Milk Tea</label>
+
+<input type="radio" name="tea" id="matcha"> <label for="matcha">🍵 Matcha</label>
+
+<input type="radio" name="tea" id="strawberry"> <label for="strawberry">🍓 Strawberry</label>
+
+</div>
+
+<h3>Choose your topping</h3>
+
+<div class="choices">
+
+<input type="radio" name="topping" id="boba" checked> <label for="boba">⚫ Boba Pearls</label>
+
+<input type="radio" name="topping" id="jelly"> <label for="jelly">🍓 Strawberry Jelly</label>
+
+<input type="radio" name="topping" id="popping"> <label for="popping">🫧 Popping Pearls</label>
+
+</div>
+
+<!-- ================= RESULTS ================= -->
+
+<div class="order-card">
+
+<!-- MILK + BOBA -->
+
+<div class="result milk-boba-result">
+
+<div class="boba-cup milk-cup">
+
+<div class="boba-straw"></div> <div class="boba-lid"></div>
+
+<div class="boba-glass"> <div class="boba-liquid"></div> <div class="boba-pearls"></div> </div>
+
+</div>
+
+<p>Mochi's pick</p>
+
+<h3>Milk Tea + Boba Pearls</h3>
+
+<p> Classic milk tea with chewy boba pearls. Simple, creamy, and impossible to go wrong with. </p>
+
+<strong>Rs. 450</strong>
+
+</div>
+
+<!-- MILK + JELLY -->
+
+<div class="result milk-jelly-result">
+
+<div class="boba-cup milk-cup jelly-cup">
+
+<div class="boba-straw"></div> <div class="boba-lid"></div>
+
+<div class="boba-glass"> <div class="boba-liquid"></div> <div class="boba-pearls"></div> </div>
+
+</div>
+
+<p>Mochi's pick</p>
+
+<h3>Milk Tea + Strawberry Jelly</h3>
+
+<p> Creamy milk tea with a fruity strawberry jelly twist. </p>
+
+<strong>Rs. 470</strong>
+
+</div>
+
+<!-- MILK + POPPING -->
+
+<div class="result milk-popping-result">
+
+<div class="boba-cup milk-cup popping-cup">
+
+<div class="boba-straw"></div> <div class="boba-lid"></div>
+
+<div class="boba-glass"> <div class="boba-liquid"></div> <div class="boba-pearls"></div> </div>
+
+</div>
+
+<p>Mochi's pick</p>
+
+<h3>Milk Tea + Popping Pearls</h3>
+
+<p> Smooth milk tea with little fruity bursts in every sip. </p>
+
+<strong>Rs. 480</strong>
+
+</div>
+
+<!-- MATCHA + BOBA -->
+
+<div class="result matcha-boba-result">
+
+<div class="boba-cup matcha-cup">
+
+<div class="boba-straw"></div> <div class="boba-lid"></div>
+
+<div class="boba-glass"> <div class="boba-liquid"></div> <div class="boba-pearls"></div> </div>
+
+<div class="matcha-foam"></div>
+
+</div>
+
+<p>Luna's pick</p>
+
+<h3>Matcha + Boba Pearls</h3>
+
+<p> Earthy matcha, creamy milk, and chewy boba pearls. </p>
+
+<strong>Rs. 500</strong>
+
+</div>
+
+<!-- MATCHA + JELLY -->
+
+<div class="result matcha-jelly-result">
+
+<div class="boba-cup matcha-cup jelly-cup">
+
+<div class="boba-straw"></div> <div class="boba-lid"></div>
+
+<div class="boba-glass"> <div class="boba-liquid"></div> <div class="boba-pearls"></div> </div>
+
+<div class="matcha-foam"></div>
+
+</div>
+
+<p>Luna's pick</p>
+
+<h3>Matcha + Strawberry Jelly</h3>
+
+<p> Smooth matcha with a sweet strawberry jelly surprise. </p>
+
+<strong>Rs. 520</strong>
+
+</div>
+
+<!-- MATCHA + POPPING -->
+
+<div class="result matcha-popping-result">
+
+<div class="boba-cup matcha-cup popping-cup">
+
+<div class="boba-straw"></div> <div class="boba-lid"></div>
+
+<div class="boba-glass"> <div class="boba-liquid"></div> <div class="boba-pearls"></div> </div>
+
+<div class="matcha-foam"></div>
+
+</div>
+
+<p>Luna's pick</p>
+
+<h3>Matcha + Popping Pearls</h3>
+
+<p> Creamy matcha with bright fruity popping pearls. </p>
+
+<strong>Rs. 530</strong>
+
+</div>
+
+<!-- STRAWBERRY + BOBA -->
+
+<div class="result strawberry-boba-result">
+
+<div class="boba-cup strawberry-cup">
+
+<div class="boba-straw"></div> <div class="boba-lid"></div>
+
+<div class="boba-glass"> <div class="boba-liquid"></div> <div class="boba-pearls"></div> </div>
+
+</div>
+
+<p>Milo's pick</p>
+
+<h3>Strawberry Milk + Boba Pearls</h3>
+
+<p> Sweet strawberry milk with chewy boba. Pink, creamy, and very cat-approved. </p>
+
+<strong>Rs. 450</strong>
+
+</div>
+
+<!-- STRAWBERRY + JELLY -->
+
+<div class="result strawberry-jelly-result">
+
+<div class="boba-cup strawberry-cup jelly-cup">
+
+<div class="boba-straw"></div> <div class="boba-lid"></div>
+
+<div class="boba-glass"> <div class="boba-liquid"></div> <div class="boba-pearls"></div> </div>
+
+<div class="strawberry-topping"></div>
+
+</div>
+
+<p>Milo's pick</p>
+
+<h3>Strawberry Milk + Strawberry Jelly</h3>
+
+<p> Double strawberry goodness with a creamy milk base. </p>
+
+<strong>Rs. 470</strong>
+
+</div>
+
+<!-- STRAWBERRY + POPPING -->
+
+<div class="result strawberry-popping-result">
+
+<div class="boba-cup strawberry-cup popping-cup">
+
+<div class="boba-straw"></div> <div class="boba-lid"></div>
+
+<div class="boba-glass"> <div class="boba-liquid"></div> <div class="boba-pearls"></div> </div>
+
+</div>
+
+<p>Milo's pick</p>
+
+<h3>Strawberry Milk + Popping Pearls</h3>
+
+<p> Sweet strawberry milk with fruity popping pearls. </p>
+
+<strong>Rs. 480</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</section>

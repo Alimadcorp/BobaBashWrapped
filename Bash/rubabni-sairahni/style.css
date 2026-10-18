@@ -1,0 +1,97 @@
+body {
+    background-color: #F5E8AA;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    margin-top: 200px;
+}
+.lol h1, h2 {
+    color: #3D2314;
+text-align: center;
+}
+.lol h1 {
+    margin-top: 60px;
+}
+.lol p {
+    margin: 0 80px 0 80px;
+    color: #3D2314;
+}
+.course p {
+    margin: 20px;
+    font-family: fantasy;
+    color: #3D2314;
+}
+.buttons a {
+  display: inline-block;
+  color: #3D2314; 
+  background-color: #F6C4C3;
+  padding: 12px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+  margin-right: 10px;
+}
+.buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+.choice {
+    height: 600px;
+    text-align: center;
+    background-color: #F5E8AA;
+    color: #3D2314;
+ }  
+.yay {
+    color: #3D2314;
+}
+.yay p {
+    margin: 0 40px 40px 40px;
+    
+}
+.table1 {
+     height: 400px;
+    
+}
+ .table1 th, td {
+    color: #3D2314;
+    height: 50px;
+    border: 1px solid #3D2314;
+ }
+table {
+    margin: 20px 250px 20px 250px;
+    border-collapse: collapse;
+    background-color: #F6C4C3;
+}
+
+
+
+
+
+
+.choice2 {
+    height: 600px;
+    text-align: center;
+    background-color: #F5E8AA;
+    color: #3D2314;
+ }  
+.yay2 {
+    color: #3D2314;
+}
+.yay2 p {
+    margin: 0 40px 40px 40px;
+    
+}
+.table2 {
+    height: 400px;
+}
+ .table2 th, td {
+    color: #3D2314;
+    height: 50px;
+    border: 1px solid #3D2314;
+ }
+table {
+    border-collapse: collapse;
+    margin: 20px 250px 20px 250px;
+    background-color: #F6C4C3;
+}

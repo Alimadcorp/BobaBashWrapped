@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kitty Boba Cafe</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Trebuchet MS", sans-serif;
+            background: linear-gradient(135deg, #fff0f5, #ffe1ec);
+            color: #79516b;
+        }
+
+        .cafe {
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            max-width: 450px;
+        }
+
+        h1 {
+            color: #c76f9e;
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #a77a98;
+            font-size: 15px;
+        }
+
+        .scene {
+            position: relative;
+            height: 290px;
+            max-width: 350px;
+            margin: 20px auto;
+        }
+
+        /* Cute kitty */
+
+        .cat {
+            position: absolute;
+            width: 170px;
+            height: 150px;
+            background: #fffaf5;
+            border: 3px solid #d9a9b9;
+            border-radius: 48% 48% 45% 45%;
+            top: 65px;
+            left: 35px;
+            animation: bob 2s ease-in-out infinite;
+            z-index: 2;
+        }
+
+        .ear {
+            position: absolute;
+            width: 58px;
+            height: 65px;
+            background: #fffaf5;
+            border: 3px solid #d9a9b9;
+            top: -32px;
+            z-index: -1;
+        }
+
+        .left-ear {
+            left: 0;
+            transform: rotate(-25deg);
+            border-radius: 70% 20% 20% 20%;
+        }
+
+        .right-ear {
+            right: 0;
+            transform: rotate(25deg);
+            border-radius: 20% 70% 20% 20%;
+        }
+
+        .face {
+            position: absolute;
+            inset: 0;
+        }
+
+        .eye {
+            position: absolute;
+            top: 58px;
+            width: 11px;
+            height: 15px;
+            background: #57414d;
+            border-radius: 50%;
+        }
+
+        .left-eye {
+            left: 44px;
+        }
+
+        .right-eye {
+            right: 44px;
+        }
+
+        .cheek {
+            position: absolute;
+            top: 82px;
+            width: 24px;
+            height: 13px;
+            background: #ffc4d4;
+            border-radius: 50%;
+        }
+
+        .left-cheek {
+            left: 19px;
+        }
+
+        .right-cheek {
+            right: 19px;
+        }
+
+        .nose {
+            position: absolute;
+            top: 80px;
+            left: 79px;
+            width: 10px;
+            height: 8px;
+            background: #d982a0;
+            border-radius: 50%;
+        }
+
+        .mouth {
+            position: absolute;
+            top: 84px;
+            left: 74px;
+            width: 20px;
+            height: 12px;
+            border-bottom: 2px solid #79516b;
+            border-radius: 50%;
+        }
+
+        .whiskers {
+            position: absolute;
+            top: 78px;
+            font-size: 22px;
+            color: #d9a9b9;
+        }
+
+        .left-whiskers {
+            left: -1px;
+        }
+
+        .right-whiskers {
+            right: -1px;
+        }
+
+        .paw {
+            position: absolute;
+            width: 45px;
+            height: 29px;
+            background: #fffaf5;
+            border: 3px solid #d9a9b9;
+            border-radius: 50%;
+            bottom: 8px;
+            right: -15px;
+            transform: rotate(-25deg);
+        }
+
+        /* Boba drink */
+
+        .boba {
+            position: absolute;
+            right: 17px;
+            top: 145px;
+            width: 105px;
+            height: 112px;
+            background: #f3c4d3;
+            border: 3px solid #c982a0;
+            border-radius: 10px 10px 25px 25px;
+            transform: rotate(-7deg);
+            animation: sip 2s ease-in-out infinite;
+        }
+
+        .boba::before {
+            content: "";
+            position: absolute;
+            top: -9px;
+            left: -5px;
+            width: 107px;
+            height: 13px;
+            background: #dca1b8;
+            border: 3px solid #c982a0;
+            border-radius: 7px;
+        }
+
+        .straw {
+            position: absolute;
+            top: 85px;
+            right: 58px;
+            width: 10px;
+            height: 83px;
+            background: #e9a0bc;
+            border: 2px solid #c982a0;
+            transform: rotate(15deg);
+            z-index: 3;
+        }
+
+        .drink-label {
+            margin-top: 25px;
+            font-size: 15px;
+            font-weight: bold;
+            color: #9b5879;
+            letter-spacing: 2px;
+        }
+
+        .pearls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+            margin: 8px auto;
+            max-width: 65px;
+            color: #674354;
+            font-size: 15px;
+        }
+
+        .message {
+            font-size: 16px;
+            margin: 15px;
+        }
+
+        button {
+            background: #e9a5c1;
+            color: white;
+            border: none;
+            padding: 13px 22px;
+            border-radius: 25px;
+            font-size: 15px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px #e9a5c155;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #d783a8;
+            transform: translateY(-3px);
+        }
+
+        #wish {
+            color: #c76f9e;
+            font-weight: bold;
+            min-height: 24px;
+        }
+
+        .heart {
+            position: absolute;
+            color: #e9a5c1;
+            animation: floatUp 4s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes bob {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @keyframes sip {
+            0%, 100% {
+                transform: rotate(-7deg);
+            }
+            50% {
+                transform: rotate(-2deg);
+            }
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            30% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 380px) {
+            h1 {
+                font-size: 25px;
+            }
+
+            .scene {
+                transform: scale(0.9);
+                transform-origin: top center;
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cafe">
+        <h1>Kitty Boba Cafe 🧋</h1>
+        <p class="subtitle">A little sip of happiness ♡</p>
+
+<div class="my-picture">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgIj0us4K-zwe0uXP3TmlWv3l4zxi8yeViiGlccUpQnBVzFdZaVcZZ231n&s=10"
+         alt="My cute cat picture">
+    <p>My little boba buddy ♡</p>
+</div>
+        <div class="scene">
+            <div class="cat">
+                <div class="ear left-ear"></div>
+                <div class="ear right-ear"></div>
+
+                <div class="face">
+                    <div class="eye left-eye"></div>
+                    <div class="eye right-eye"></div>
+                    <div class="cheek left-cheek"></div>
+                    <div class="cheek right-cheek"></div>
+                    <div class="nose"></div>
+                    <div class="mouth"></div>
+                    <div class="whiskers left-whiskers">≋</div>
+                    <div class="whiskers right-whiskers">≋</div>
+                </div>
+
+                <div class="paw"></div>
+            </div>
+
+            <div class="straw"></div>
+
+            <div class="boba">
+                <div class="drink-label">BOBA</div>
+                <div class="pearls">
+                    <span>●</span>
+                    <span>●</span>
+                    <span>●</span>
+                    <span>●</span>
+                    <span>●</span>
+                    <span>●</span>
+                </div>
+            </div>
+        </div>
+
+        <p class="message">
+            Purr-fectly brewed with love ♡
+        </p>
+
+        <button onclick="makeWish()">
+            Give kitty a treat 🍓
+        </button>
+
+        <p id="wish"></p>
+    </div>
+
+    <script>
+        function makeWish() {
+            document.getElementById("wish").textContent =
+                "Meow! Thank you for the treat! ♡ 🐾";
+        }
+
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.textContent = "♥";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.top = "90vh";
+            heart.style.fontSize =
+                (12 + Math.random() * 15) + "px";
+            document.body.appendChild(heart);
+
+            setTimeout(function() {
+                heart.remove();
+            }, 4000);
+        }
+
+        setInterval(createHeart, 800);
+    </script>
+</body>
+</html>

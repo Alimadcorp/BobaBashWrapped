@@ -1,0 +1,101 @@
+
+body {
+  background-color: #e3e6ba;
+}
+
+#monkey_main{
+    
+    font-size: 50px;
+    color: #a59008;
+}
+
+.navbar {
+  background-color: #b0b79a;
+  width : 100%;
+  background-color: #fefdea;
+  color: rgb(3, 3, 2);
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  justify-content: center;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-wrap: nowrap; 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 45px;
+   justify-content: space-around;
+}
+
+
+.nav-list a {
+  text-decoration: underline;
+ color: #a59008;
+
+  font-weight: 500;
+}
+
+.lovers-quarrel-regular {
+  font-family: "Lovers Quarrel";
+  font-weight: 500;
+  font-style: normal;
+  font-size: larger;
+}
+
+.grechen-fuemen-regular {
+  font-family: "Grechen Fuemen", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dancing-script-regular {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.shadows-into-light-regular {
+  font-family: "Shadows Into Light", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.crafty-girls-regular {
+  font-family: "Crafty Girls", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+#footer-spacing{
+  padding-top: 100px;
+  padding-left: 100px;
+}
+.footer-content{
+
+  background-color: #eeaf31;
+  color: rgb(3, 3, 2);
+}
+.para {
+    height: 120%;
+    width: 70%;
+    margin: 2%;
+    border: 5px dotted #a59008;
+    background-color: #fefdea;
+    color: #a59008;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.para-container {
+  width: 100%;
+    display: flex;
+    flex-direction: row;
+     justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    
+}

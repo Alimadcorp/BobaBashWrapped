@@ -1,0 +1,31 @@
+body {
+    background-color: #F5E6D3;
+    color: #5C3D2E;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1, h2, h3, h4 {
+    color: #5C3D2E;
+}
+
+.menu {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.flavours {
+    flex: 1;
+}
+
+.menu img {
+    width: 250px;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    .menu {
+        flex-direction: column;
+    }
+}

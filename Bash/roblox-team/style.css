@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+</head>
+<body>
+    
+    <h1>Memory Game</h1>
+    
+    <p>Find all matching pairs!</p>
+
+    <h2> Moves:0</h2>
+    
+
+    <div class="game-board">
+        <button>?</button>
+        <button>?</button>
+        <button>?</button>
+        <button>?</button>
+
+
+        <button>?</button>
+        <button>?</button>
+        <button>?</button>
+        <button>?</button>
+    </div>
+    <p>Match all the cards to win!</p>
+
+    <button>Restart Game</button>
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

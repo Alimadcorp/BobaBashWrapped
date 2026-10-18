@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boba Bash|The LOST FLAVOUR</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    <img src="https://mir-s3-cdn-cf.behance.net/projects/404/6e0e54234245327.Y3JvcCwxMTM1LDg4OCwxNDgsMA.jpg" alt="Boba Bear Logo" class="brand-logo-topleft">
+    <div class="cart-badge" id="cartBadge">🛒 Cart: 0 Items</div>
+
+    
+
+    <!-- SCREEN 1: LANDING PAGE -->
+    <div id="screen-start" class="view-screen">
+        <h1 class="page-title">The Lost Flavour</h1>
+        <img src="boba.png" alt="Cute Boba Tea" class="boba-image">
+        <p class="story-text"><i>Something <strong>strange</strong> has happened</i></p>
+        <p class="story-text"><i>The world has lost its <strong>flavour....</strong></i></p>
+        <button id="startButton">Start your <em>adventure</em>!</button>
+        <p class="footer-msg">Your next sip could change everything...</p>
+    </div>
+
+    <!-- SCREEN 2: FLAVOUR SELECTION PAGE -->
+    <div id="screen-select" class="view-screen" style="display: none;">
+        <h1 class="page-title">Choose Your Flavour!</h1>
+        <img src="boba.png" alt="Cute Boba Tea" class="boba-image">
+        <p class="story-text">Every flavour has a story...</p>
+        <p class="story-text">Which magical world will you explore?</p>
+        <div class="flavor-container">
+            <button id="strawberryBtn">🍓 Strawberry Kingdom</button>
+            <button id="chocolateBtn">🍫 Chocolate Cosmos</button>
+        </div>
+        <div class="center-link-box">
+            <a href="#" id="backToStartLink" class="back-btn-link">← Go Back to Start</a>
+        </div>
+        <p class="footer-msg">Your next sip could change everything...</p>
+    </div>
+
+    <!-- SCREEN 3: STRAWBERRY PRODUCT INTERFACE -->
+    <div id="screen-strawberry" class="view-screen" style="display: none;">
+        <h1 class="page-title">Strawberry Realm</h1>
+        <img src="strawberry.png" alt="Strawberry Boba" class="boba-image">
+        <p class="story-text">Fresh red crimson berry brew from the magical streams.</p>
+        <p class="story-text">Heals the world with absolute sweetness.</p>
+        <div class="product-card">
+            <div class="product-price">$5.50</div>
+            <button id="addStrawberryCart">🛒 Add Strawberry Boba to Cart</button>
+        </div>
+        <div class="center-link-box">
+            <a href="#" id="backToSelectFromStraw" class="back-btn-link">← Choose Another Flavor</a>
+        </div>
+    </div>
+
+    <!-- SCREEN 4: CHOCOLATE PRODUCT INTERFACE -->
+    <div id="screen-chocolate" class="view-screen" style="display: none;">
+        <h1 class="page-title">Chocolate Cosmos</h1>
+        <img src="choc tea.png" alt="Chocolate Boba" class="boba-image">
+        <p class="story-text">Deep rich organic galactic cocoa fusion.</p>
+        <p class="story-text">Brings harmony back to the deep dark void.</p>
+        <div class="product-card">
+            <div class="product-price">$6.00</div>
+            <button id="addChocolateCart">🛒 Add Chocolate Boba to Cart</button>
+        </div>
+        <div class="center-link-box">
+            <a href="#" id="backToSelectFromChoc" class="back-btn-link">← Choose Another Flavor</a>
+        </div>
+    </div>
+
+    <!-- SCREEN 5: FINAL DESTINY SCREEN -->
+    <div id="screen-final" class="view-screen" style="display: none;">
+        <h1 class="page-title" id="finalHeading">Realm Unlocked!</h1>
+        <img src="boba.png" alt="Cute Boba Tea" class="boba-image" id="finalHeroImg">
+        <p class="story-text" id="finalText1">Boba has been successfully added to your cart!</p>
+        <p class="story-text" id="finalText2">The magic power has been restored completely.</p>
+        <div class="center-link-box">
+            <a href="#" id="restartAdventureLink" class="back-btn-link restart-style">← Restart Adventure</a>
+        </div>
+        <p class="footer-msg">Your destiny has been fulfilled.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

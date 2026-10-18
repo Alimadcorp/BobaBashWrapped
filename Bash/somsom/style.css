@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff8f3;
+    color: #573b35;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background-color: #ffe8ed;
+}
+
+.logo {
+    color: #bd6682;
+    font-size: 25px;
+    font-family: Georgia, serif;
+}
+
+.logo span {
+    color: #e99bb3;
+}
+
+nav a {
+    text-decoration: none;
+    color: #573b35;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #bd6682;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 65px 10%;
+    gap: 40px;
+}
+
+.intro {
+    max-width: 450px;
+}
+
+.little-title {
+    color: #bd6682;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: 55px;
+    line-height: 1.15;
+    color: #573b35;
+}
+
+h1 span {
+    color: #d77f9c;
+}
+
+.intro > p:not(.little-title) {
+    line-height: 1.8;
+    margin: 20px 0;
+    color: #806a62;
+}
+
+.button,
+button {
+    display: inline-block;
+    background-color: #d987a3;
+    color: white;
+    padding: 13px 24px;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.button:hover,
+button:hover {
+    background-color: #bd6682;
+}
+
+.boba {
+    text-align: center;
+    background-color: #fbe1e8;
+    border-radius: 50%;
+    width: 290px;
+    height: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cup {
+    position: relative;
+    width: 115px;
+    height: 155px;
+    background-color: #d9a17e;
+    border: 4px solid white;
+    border-radius: 10px 10px 25px 25px;
+    transform: rotate(-4deg);
+}
+
+.cup-top {
+    position: absolute;
+    top: -8px;
+    left: -7px;
+    width: 121px;
+    height: 13px;
+    background-color: #fffdf8;
+    border-radius: 5px;
+}
+
+.straw {
+    position: absolute;
+    width: 10px;
+    height: 55px;
+    background-color: #d987a3;
+    border: 2px solid white;
+    top: -47px;
+    left: 72px;
+    transform: rotate(10deg);
+}
+
+.tea {
+    position: absolute;
+    top: 12px;
+    width: 100%;
+    height: 35px;
+    background-color: #f1c7ad;
+}
+
+.pearls {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    color: #573b35;
+    font-size: 17px;
+    line-height: 1.3;
+}
+
+.cup-name {
+    position: absolute;
+    top: 57px;
+    left: 13px;
+    width: 81px;
+    padding: 8px 0;
+    background-color: #fff8f3;
+    color: #bd6682;
+    font-family: Georgia, serif;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.cup-caption {
+    margin-top: 22px;
+    color: #bd6682;
+    font-family: Georgia, serif;
+    font-size: 13px;
+}
+
+.menu {
+    background-color: #fffdfb;
+    padding: 55px 10%;
+    text-align: center;
+}
+
+h2 {
+    font-family: Georgia, serif;
+}
+
+.menu h2,
+.event h2 {
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    flex: 1;
+    padding: 28px 15px;
+    border-radius: 18px;
+}
+
+.strawberry {
+    background-color: #ffe4eb;
+}
+
+.classic {
+    background-color: #f4e4d5;
+}
+
+.matcha {
+    background-color: #e9eedf;
+}
+
+.symbol {
+    font-size: 34px;
+    color: #bd6682;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 13px;
+    color: #806a62;
+}
+
+.event {
+    padding: 65px 20px;
+    text-align: center;
+}
+
+.event h2 {
+    line-height: 1.3;
+}
+
+.event > p:not(.little-title) {
+    color: #806a62;
+    margin: 15px 0;
+    line-height: 1.7;
+}
+
+.details {
+    font-size: 14px;
+}
+
+.event button {
+    margin-top: 15px;
+}
+
+#message {
+    color: #bd6682;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    background-color: #ffe8ed;
+    padding: 22px;
+    color: #806a62;
+    font-size: 13px;
+}
+
+@media (max-width: 650px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav a {
+        margin: 0 7px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 45px 7%;
+    }
+
+    h1 {
+        font-size: 43px;
+    }
+
+    .boba {
+        width: 260px;
+        height: 260px;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+}

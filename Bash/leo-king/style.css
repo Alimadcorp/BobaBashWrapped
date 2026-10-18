@@ -1,0 +1,33 @@
+/* styles for the Relic website */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    color: #333;
+    text-align: center;
+    margin-top: 20px
+}
+h2 {
+    color: #555;
+    text-align: center;
+    margin-top: 10px;
+}
+img {
+    display: block;
+    margin: 10px auto;
+    max-width: 25%;
+    height: auto;
+}
+a {
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+}
+h3 {
+    color: #666;
+    text-align: center;
+    margin-top: 10px;
+}

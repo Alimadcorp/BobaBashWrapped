@@ -1,0 +1,35 @@
+h1{
+  color: rgb(216, 70, 70);
+  font-size: 30px;
+  text-align: center;
+ 
+}
+
+h2{
+  color: rgb(145, 47, 68);
+  background-color: beige;
+  padding: 10px 20px;
+}
+
+p{
+  color: deeppink;
+  text-align: center;
+  font-size: 25px;
+}
+
+body{
+  background-image: url('https://i.pinimg.com/1200x/6d/79/a1/6d79a1d55234c1855adb0491e16668ea.jpg');
+}
+
+a{
+  padding: 10px 20px;
+  background-color: crimson;
+  color: beige;
+  text-decoration: none;
+  border-radius: 50px;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,230 @@
+/* Basic settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top, #30105e, #090018 70%);
+    color: white;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+}
+
+nav h2, span {
+    color: #c7a5ff;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav a:hover {
+    color: #ff8fba;
+}
+
+/* Homepage */
+.hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    padding: 50px 8%;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin: 15px 0;
+}
+
+.hero p {
+    color: #d0c2df;
+    margin-bottom: 25px;
+}
+
+.tag {
+    color: #ff8fba;
+    font-size: 12px;
+}
+
+.hero img {
+    width: 280px;
+    max-width: 100%;
+}
+
+.btn {
+    display: inline-block;
+    background: #c7a5ff;
+    color: #17072b;
+    padding: 12px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* About and flavors */
+.about, .flavors {
+    text-align: center;
+    padding: 65px 8%;
+}
+
+.about h1 {
+    color: #c7a5ff;
+    margin: 30px 0 15px;
+}
+
+.about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    color: #d0c2df;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 550px;
+    margin: 15px auto;
+}
+
+/* Flavor cards */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.cards article {
+    background: #1b1030;
+    border: 1px solid #493365;
+    border-radius: 15px;
+    padding: 25px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.cards p {
+    color: #d0c2df;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #c7a5ff;
+}
+
+/* Login page */
+.login-box {
+    background: #170d29;
+    color: white;
+    width: 400px;
+    max-width: 90%;
+    margin: 40px auto;
+    padding: 35px;
+    border: 1px solid #493365;
+    border-radius: 20px;
+    box-shadow: 0 0 35px #a855f733;
+}
+
+.login-box h1 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.login-box p {
+    color: #d0c2df;
+    line-height: 1.6;
+}
+
+.login-box label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 13px;
+    margin: 8px 0 20px;
+    background: #241538;
+    color: white;
+    border: 1px solid #493365;
+    border-radius: 8px;
+}
+
+.login-box input:focus {
+    outline: 2px solid #c7a5ff;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 14px;
+    background: #c7a5ff;
+    color: #17072b;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background: #ff8fba;
+}
+
+.login-box .signup {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.login-box .signup a, .back-home {
+    color: #c7a5ff;
+    text-decoration: none;
+}
+
+.back-home {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Mobile screens */
+@media (max-width: 650px) {
+    nav {
+        padding: 20px;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero img {
+        width: 220px;
+    }
+}

@@ -1,0 +1,198 @@
+
+:root {
+    --primary-purple: #5635B8;
+    --dark-purple: #211747;
+    --bright-yellow: #FFDF4D;
+    --cream: #FFF9ED;
+    --light-purple: #E5D9FF;
+    --pink: #FF9FCB;
+    --light-green: #8BE8C2;
+    --section-blue: rgb(92, 185, 246);
+    --dark-yellow: #efc715;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cream);
+    margin: 0;
+    padding: 0;
+    font-family: "Fredoka", sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cream);
+}
+
+span {
+    color: var(--bright-yellow);
+}
+
+.wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.header-main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 1100px;
+    min-height: 70px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--dark-purple);
+    /* border: 3px solid var(--primary-purple); */
+    /* border-radius: 0 0 18px 18px; */
+    z-index: 1000;
+}
+
+.header-main > a:first-child {
+    font-family: "Fredoka", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+}
+.header-main .nav-menu a{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.header-main .nav-menu a:hover{
+    color: var(--bright-yellow);
+    transition: 0.3s all ease;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 24px;
+    font-family: "Comic Neue", cursive;
+    font-weight: 700;
+}
+
+.nav-btn {
+    background-color: var(--bright-yellow);
+    color: var(--dark-purple);
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+.nav-btn:hover {
+    background-color: var(--pink);
+    transform: rotate(-3deg);
+}
+h2{
+    font-size: 2.5rem;
+    color: var(--dark-purple);
+}
+p{
+    font-size: 18px;
+    font-weight: 500;
+}
+h2 span{
+    font-size: 4rem;
+    color: var(--bright-yellow);
+}
+.section{
+    background-color: var();
+    width: 100%;
+    background-color: var(--section-blue);
+    min-height: 80vh;
+    padding: 120px 60px 60px 60px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.section  p{
+    font-size: 18px;
+    font-weight: 500;
+}
+.section .home-text{
+    transform: rotate(-3deg);
+}
+.home-btn{
+    margin-top: 10px;
+    background-color: var(--bright-yellow);
+    color: var(--dark-purple);
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: "Fredoka", sans-serif;
+    border: 1px solid var(--dark-purple);
+    box-shadow: 5px 4px 0px var(--dark-purple);
+    cursor: pointer;
+    transform: rotate(-3deg);
+}
+.home-btn:hover{
+    box-shadow: 0px 0px 0px var(--dark-purple);
+}
+
+.card {
+    padding: 10px;
+    background-color: var(--pink);
+    border: 4px solid var(--dark-purple);
+    border-radius: 15px;
+    box-shadow: 5px 5px 1px var(--dark-purple);
+    transform: rotate(3deg);
+}
+
+.card:hover{
+    transform: rotate(4deg);
+}
+
+.card img{
+    height: 16rem;
+    border: 4px solid var(--dark-purple);
+    border-radius: 15px;
+}
+
+.card p{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+.meme-gallery{
+    text-align: center;
+}
+
+
+
+@media (max-width: 768px) {
+    .header {
+        padding: 0 20px;
+    }
+    .nav-menu {
+        display: none;
+    }
+    .section {
+        min-height: auto;
+        padding: 100px 40px 40px 40px;
+    }
+    
+}
+
+
+
+
+
+
+
