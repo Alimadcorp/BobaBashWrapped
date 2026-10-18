@@ -6,6 +6,7 @@
     <title>Boba Bash Lahore Ships</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="https://bash.hackclub.com/favicon.ico" />
     <link
       href="https://fonts.googleapis.com/css2?family=Phantom+Sans:wght@400;700;800&family=Space+Grotesk:wght@500;700&display=swap"
       rel="stylesheet"
@@ -36,6 +37,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
       }
       .flag {
         background: #ec3750;
@@ -49,8 +51,12 @@
         display: inline-block;
         transform: rotate(-2deg);
       }
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
       nav a {
-        margin-left: 20px;
         text-decoration: none;
         color: #252429;
         font-weight: 700;
@@ -178,15 +184,39 @@
       .voted {
         background: #85ff60;
       }
+      @media (max-width: 600px) {
+        header {
+          flex-direction: column;
+          gap: 15px;
+          padding: 16px;
+        }
+        nav {
+          justify-content: center;
+        }
+        .main-layout {
+          margin: 20px auto;
+          padding: 0 15px;
+        }
+        .card {
+          padding: 20px;
+        }
+        h1 {
+          font-size: 32px;
+        }
+        .stats-grid {
+          grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
   <body>
     <header>
       <a href="https://hackclub.com" class="flag">HACK CLUB</a>
       <nav>
-        <a href="https://bash.hackclub.com/events/lahore/submissions"
-          >pre-event ships</a
-        >
+        <a href="https://bash.hackclub.com/events/lahore/submissions">pre-event ships</a>
         <a href="/">home</a>
       </nav>
     </header>
@@ -216,33 +246,22 @@
             <div class="stat-label">Avg NPS</div>
           </div>
           <div class="stat-box" style="display: none">
-            <div
-              class="stat-number"
-              style="font-size: 24px; padding-top: 10px"
-              id="top-method"
-            >
-              -
-            </div>
+            <div class="stat-number" style="font-size: 24px; padding-top: 10px" id="top-method">-</div>
             <div class="stat-label">Top Submit Method</div>
           </div>
         </div>
 
         <div class="chart-container" style="display: none">
-          <h2 style="border-bottom: 3px solid #ec3750; margin-top: 0">
-            Cumulative Signups
-          </h2>
+          <h2 style="border-bottom: 3px solid #ec3750; margin-top: 0">Cumulative Signups</h2>
           <canvas id="signupsChart" height="80"></canvas>
         </div>
 
-        <a href="/ships" style="display: none"
-          ><h2 id="post-wall">Click to view day-of ships</h2></a
-        >
+        <a href="/ships" style="display: none"><h2 id="post-wall">Click to view day-of ships</h2></a>
         <div class="grid" id="post-wall-grid" style="margin-top: 20px"></div>
       </div>
     </div>
 
     <script>
-      // Helper to get stored votes from local storage
       function getVotes() {
         return JSON.parse(localStorage.getItem('boba_votes') || '{}')
       }
@@ -252,19 +271,13 @@
         event.stopPropagation()
 
         const votes = getVotes()
-        if (votes[url]) return // Prevent if already voted
+        if (votes[url]) return
 
-        // Log the upvote
-        fetch(
-          'https://log.alimad.co/api/log?channel=bblv&text=upvote:' +
-            encodeURIComponent(url)
-        )
+        fetch('https://log.alimad.co/api/log?channel=bblv&text=upvote:' + encodeURIComponent(url))
 
-        // Save to local storage
         votes[url] = 'up'
         localStorage.setItem('boba_votes', JSON.stringify(votes))
 
-        // Update UI to show 'Voted' and hide buttons
         container.innerHTML = `<span style="font-size: 12px; font-weight: 700; color: #0369a1; background: #e0f2fe; padding: 4px 10px; border-radius: 12px; border: 1px solid #0284c7;">✓ Voted</span>`
       }
 
@@ -273,32 +286,23 @@
         event.stopPropagation()
 
         const votes = getVotes()
-        if (votes[url]) return // Prevent if already voted
+        if (votes[url]) return
 
-        // Log the downvote
-        fetch(
-          'https://log.alimad.co/api/log?channel=bblv&text=downvote:' +
-            encodeURIComponent(url)
-        )
+        fetch('https://log.alimad.co/api/log?channel=bblv&text=downvote:' + encodeURIComponent(url))
 
-        // Save to local storage
         votes[url] = 'down'
         localStorage.setItem('boba_votes', JSON.stringify(votes))
 
-        // Update UI to show 'Voted' and hide buttons
         container.innerHTML = `<span style="font-size: 12px; font-weight: 700; color: #0369a1; background: #e0f2fe; padding: 4px 10px; border-radius: 12px; border: 1px solid #0284c7;">✓ Voted</span>`
       }
 
       fetch('data.json')
         .then(res => res.json())
         .then(data => {
-          document.getElementById('checked-in-count').innerText =
-            data.stats.checkedIn
+          document.getElementById('checked-in-count').innerText = data.stats.checkedIn
           document.getElementById('pre-count').innerText = data.stats.preCount
-          document.getElementById('post-count').innerText =
-            data.postEvent.length
-          document.getElementById('avg-rating').innerText =
-            data.stats.avgRating + '/10'
+          document.getElementById('post-count').innerText = data.postEvent.length
+          document.getElementById('avg-rating').innerText = data.stats.avgRating + '/10'
           document.getElementById('top-method').innerText = data.stats.topMethod
 
           const postWall = document.getElementById('post-wall-grid')
@@ -309,11 +313,8 @@
             el.className = 'submission-card'
             let _href = item.url
             let _target = item.url.startsWith('./') ? '_self' : '_blank'
-            const membersHtml = item.members
-              ? `<div class="sub-members">${item.members}</div>`
-              : ''
+            const membersHtml = item.members ? `<div class="sub-members">${item.members}</div>` : ''
 
-            // Check if user has already voted on this specific item
             const hasVoted = savedVotes[item.url] !== undefined
 
             let actionHtml = ''
@@ -327,18 +328,10 @@
             }
 
             el.innerHTML = `
-                <a href="${_href}" target="${_target}" class="sub-name" style="text-decoration:none; display:block;">${
-              item.name
-            }</a>
+                <a href="${_href}" target="${_target}" class="sub-name" style="text-decoration:none; display:block;">${item.name}</a>
                 ${membersHtml}
                 <div class="badge" style="display: none">
-                    ${
-                      item.method.includes('Paste')
-                        ? 'Hosted locally'
-                        : item.method.includes('ZIP')
-                        ? 'Extracted ZIP'
-                        : 'External Link'
-                    }
+                    ${item.method.includes('Paste') ? 'Hosted locally' : item.method.includes('ZIP') ? 'Extracted ZIP' : 'External Link'}
                 </div>
                 <div style="margin-top: 10px;">
                     ${actionHtml}

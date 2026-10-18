@@ -36,6 +36,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
       }
       .flag {
         background: #ec3750;
@@ -49,8 +50,12 @@
         display: inline-block;
         transform: rotate(-2deg);
       }
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
       nav a {
-        margin-left: 20px;
         text-decoration: none;
         color: #252429;
         font-weight: 700;
@@ -109,8 +114,6 @@
         text-decoration: none;
         color: inherit;
       }
-
-      /* --- Action Buttons --- */
       .action-buttons {
         display: flex;
         gap: 15px;
@@ -139,8 +142,6 @@
         background: #fce7f3;
         color: #be185d;
       }
-
-      /* --- Comments Section --- */
       .comments-container {
         font-family: 'Host Grotesk', sans-serif;
         margin-top: 40px;
@@ -192,6 +193,7 @@
         padding: 15px;
         background: #fff;
         gap: 10px;
+        flex-wrap: wrap;
       }
       #comment-text {
         flex: 1;
@@ -201,6 +203,7 @@
         font-family: 'Host Grotesk', sans-serif;
         font-size: 16px;
         outline: none;
+        min-width: 150px;
       }
       #comment-text:focus {
         border-color: #ec3750;
@@ -209,7 +212,7 @@
         background: #ec3750;
         color: white;
         border: 2px solid #252429;
-        padding: 0 24px;
+        padding: 12px 24px;
         border-radius: 6px;
         font-weight: 700;
         cursor: pointer;
@@ -224,15 +227,48 @@
         background: #ccc;
         cursor: not-allowed;
       }
+      @media (max-width: 600px) {
+        header {
+          flex-direction: column;
+          gap: 15px;
+          padding: 16px;
+        }
+        nav {
+          justify-content: center;
+        }
+        .main-layout {
+          margin: 20px auto;
+          padding: 0 15px;
+        }
+        .card {
+          padding: 20px;
+        }
+        h1 {
+          font-size: 32px;
+        }
+        .stats-grid {
+          grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        }
+        .action-buttons {
+          flex-direction: column;
+        }
+        .action-btn {
+          width: 100%;
+        }
+        .comment-input-area {
+          flex-direction: column;
+        }
+        #send-comment-btn {
+          width: 100%;
+        }
+      }
     </style>
   </head>
   <body>
     <header>
-      <a href="#" class="flag">HACK CLUB</a>
+      <a href="https://hackclub.com" class="flag">HACK CLUB</a>
       <nav>
-        <a href="https://bash.hackclub.com/events/lahore/submissions"
-          >pre-event ships</a
-        >
+        <a href="https://bash.hackclub.com/events/lahore/submissions">pre-event ships</a>
         <a href="/ships">day-of ships</a>
       </nav>
     </header>
@@ -265,17 +301,8 @@
 
         <div class="action-buttons">
           <a href="/ships" class="action-btn">Day-Of Ships</a>
-          <a
-            href="https://bash.hackclub.com/events/lahore/submissions"
-            class="action-btn"
-            >Pre-Event Ships</a
-          >
-          <a
-            href="https://instagram.com/bobabash_lahore"
-            target="_blank"
-            class="action-btn ig-btn"
-            >Instagram</a
-          >
+          <a href="https://bash.hackclub.com/events/lahore/submissions" class="action-btn">Pre-Event Ships</a>
+          <a href="https://instagram.com/bobabash_lahore" target="_blank" class="action-btn ig-btn">Instagram</a>
         </div>
 
         <div class="comments-container">
@@ -303,22 +330,15 @@
         .then(res => res.json())
         .then(data => {
           if (data.stats) {
-            document.getElementById('checked-in-count').innerText =
-              data.stats.checkedIn || '-'
-            document.getElementById('pre-count').innerText =
-              data.stats.preCount || '-'
-            document.getElementById('post-count').innerText = data.postEvent
-              ? data.postEvent.length
-              : '-'
-            document.getElementById('avg-rating').innerText =
-              (data.stats.avgRating || '-') + '/10'
+            document.getElementById('checked-in-count').innerText = data.stats.checkedIn || '-'
+            document.getElementById('pre-count').innerText = data.stats.preCount || '-'
+            document.getElementById('post-count').innerText = data.postEvent ? data.postEvent.length : '-'
+            document.getElementById('avg-rating').innerText = (data.stats.avgRating || '-') + '/10'
           }
         })
         .catch(err => console.error('Error loading stats:', err))
 
-      const bw = atob(
-        'ZnVjay5zaGl0LmJpdGNoLmFzc2hvbGUuY3VudC5kaWNrLnB1c3N5LmJhc3RhcmQuc2x1dC53aG9yZS5jcmFw'
-      ).split('.')
+      const bw = atob('ZnVjay5zaGl0LmJpdGNoLmFzc2hvbGUuY3VudC5kaWNrLnB1c3N5LmJhc3RhcmQuc2x1dC53aG9yZS5jcmFw').split('.')
 
       function containsBadWords(text) {
         const lowerText = text.toLowerCase()
@@ -333,8 +353,7 @@
         if (seconds < 60) return 'just now'
 
         const minutes = Math.floor(seconds / 60)
-        if (minutes < 60)
-          return minutes === 1 ? '1 minute ago' : `${minutes} minutes ago`
+        if (minutes < 60) return minutes === 1 ? '1 minute ago' : `${minutes} minutes ago`
 
         const hours = Math.floor(minutes / 60)
         if (hours < 24) return hours === 1 ? '1 hour ago' : `${hours} hours ago`
@@ -345,9 +364,7 @@
 
       async function loadComments() {
         try {
-          const res = await fetch(
-            'https://log.alimad.co/api/pull?channel=bblcm'
-          )
+          const res = await fetch('https://log.alimad.co/api/pull?channel=bblcm')
           const data = await res.json()
           const list = document.getElementById('comments-list')
 
@@ -367,16 +384,13 @@
               div.appendChild(textNode)
               list.appendChild(div)
             })
-            // Auto scroll to bottom
             list.scrollTop = list.scrollHeight
           } else {
-            list.innerHTML =
-              '<p style="text-align:center; color:#666; margin-top:20px;">No comments yet. Be the first!</p>'
+            list.innerHTML = '<p style="text-align:center; color:#666; margin-top:20px;">No comments yet. Be the first!</p>'
           }
         } catch (err) {
           console.error('Error loading comments:', err)
-          document.getElementById('comments-list').innerHTML =
-            '<p style="text-align:center; color:#ec3750; margin-top:20px;">Failed to load comments.</p>'
+          document.getElementById('comments-list').innerHTML = '<p style="text-align:center; color:#ec3750; margin-top:20px;">Failed to load comments.</p>'
         }
       }
 
@@ -396,12 +410,9 @@
         btn.innerText = '...'
 
         try {
-          await fetch(
-            'https://log.alimad.co/api/log?channel=bblcm&text=' +
-              encodeURIComponent(text)
-          )
+          await fetch('https://log.alimad.co/api/log?channel=bblcm&text=' + encodeURIComponent(text))
           input.value = ''
-          await loadComments() // reload immediately after sending
+          await loadComments()
         } catch (err) {
           alert('Failed to send comment. Please try again.')
         } finally {
