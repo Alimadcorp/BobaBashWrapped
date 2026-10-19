@@ -369,7 +369,8 @@
           const data = await res.json()
           const list = document.getElementById('comments-list')
 
-          if (data.logs && data.logs.length > 0 && lc.logs.length != data.logs.length) {
+          if (data.logs && data.logs.length > 0) { 
+            if (lc.logs.length != data.logs.length) {
             list.innerHTML = ''
             data.logs.forEach(log => {
               const div = document.createElement('div')
@@ -386,6 +387,7 @@
               list.appendChild(div)
             })
             list.scrollTop = list.scrollHeight
+            }
           } else {
             list.innerHTML = '<p style="text-align:center; color:#666; margin-top:20px;">No comments yet. Be the first!</p>'
           }
