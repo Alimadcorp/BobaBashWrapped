@@ -326,7 +326,7 @@
     </div>
 
     <script>
-    let lc; // last loaded comments
+    let lc = { logs: [] }; // last loaded comments
     fetch('data.json')
         .then(res => res.json())
         .then(data => {
