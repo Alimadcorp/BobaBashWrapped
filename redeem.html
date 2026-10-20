@@ -139,7 +139,7 @@
             localStorage.setItem(KEY_CODE, data.code)
             renderCodeView(email, data.code)
           } else {
-            verifyStatus.textContent = data.message || 'Error :fahh:'
+            verifyStatus.textContent = data.message || 'You sure u signed up with this email?'
           }
         } catch (err) {
           console.error(err)
