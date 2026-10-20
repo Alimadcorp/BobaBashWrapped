@@ -334,7 +334,7 @@
             document.getElementById('checked-in-count').innerText = data.stats.checkedIn || '-'
             document.getElementById('pre-count').innerText = data.stats.preCount || '-'
             document.getElementById('post-count').innerText = data.postEvent ? data.postEvent.length : '-'
-            document.getElementById('avg-rating').innerText = (data.stats.avgRating || '-') + '/10'
+            document.getElementById('avg-rating').innerText = (data.stats.avgRating || '-')
           }
         })
         .catch(err => console.error('Error loading stats:', err))
