@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Boba Bash Lahore Redeem</title>
+  </head>
+  <body>
+    <center>
+      <h1>Redeem your .XYZ Domain</h1>
+
+      <div id="page-verify">
+        <form id="verify-form">
+          <label for="email">Email Address:</label><br />
+          <input type="email" id="email" required /><br /><br />
+
+          <label>
+            <input type="checkbox" id="attended" required />
+            I attended Boba Bash Lahore </label
+          ><br /><br />
+
+          <button id="get-code" type="submit">Get Redeem Code</button>
+        </form>
+        <p id="verify-status"></p>
+      </div>
+
+      <div id="page-code" style="display: none">
+        <h2>How to redeem</h2>
+        <p>
+          Email: <strong id="display-email"></strong>
+          <button id="change-email-btn">Change Email</button>
+        </p>
+
+        <div>
+          <h3>Your .XYZ Promo Code:</h3>
+          <p id="display-code">Loading...</p>
+        </div>
+
+        <h3>How to Redeem:</h3>
+        <ol>
+          <li>Go to the <a href="https://gen.xyz" target="_blank">GEN.XYZ</a>.</li>
+          <li>
+            Search for your preferred <strong>.xyz</strong> domain name and add
+            it to cart.
+          </li>
+          <li>
+            Apply your promo code: <u id="guide-code">...</u> at checkout.
+          </li>
+          <li>
+            <strong>Note:</strong> Select <strong>PayPal</strong> as your
+            checkout option. This allows you to complete the transaction without
+            providing credit card details.
+          </li>
+        </ol>
+
+        <br />
+        <button id="goto-log-btn">I've Claimed My Domain</button>
+      </div>
+
+      <div id="page-log" style="display: none">
+        <h2>Share about it</h2>
+        <p>Which domain name did you register with your code?</p>
+
+        <form id="log-form">
+          <label for="domainName">Domain Name:</label><br />
+          <input
+            type="text"
+            id="domainName"
+            placeholder="example.xyz"
+            required
+          /><br /><br />
+
+          <button type="submit">Submit Domain</button>
+        </form>
+        <p id="log-status"></p>
+
+        <br />
+        <button id="back-to-code-btn">Back to Promo Code</button>
+      </div>
+    </center>
+
+    <script>
+      const pageVerify = document.getElementById('page-verify')
+      const pageCode = document.getElementById('page-code')
+      const pageLog = document.getElementById('page-log')
+
+      const verifyForm = document.getElementById('verify-form')
+      const getCode = document.getElementById('get-code')
+      const emailInput = document.getElementById('email')
+      const attendedInput = document.getElementById('attended')
+      const verifyStatus = document.getElementById('verify-status')
+
+      const displayEmail = document.getElementById('display-email')
+      const displayCode = document.getElementById('display-code')
+      const guideCode = document.getElementById('guide-code')
+      const changeEmailBtn = document.getElementById('change-email-btn')
+      const gotoLogBtn = document.getElementById('goto-log-btn')
+
+      const logForm = document.getElementById('log-form')
+      const domainInput = document.getElementById('domainName')
+      const logStatus = document.getElementById('log-status')
+      const backToCodeBtn = document.getElementById('back-to-code-btn')
+
+      const KEY_EMAIL = 'bblr_email'
+      const KEY_CODE = 'bblr_code'
+
+      let ix = setInterval(() => {
+        getCode.disabled =
+          emailInput.value.trim() == '' ||
+          emailInput.value.split('@').length < 2 ||
+          !attendedInput.checked
+      }, 10)
+
+      function showPage(page) {
+        pageVerify.style.display = 'none'
+        pageCode.style.display = 'none'
+        pageLog.style.display = 'none'
+
+        if (page === 'verify') pageVerify.style.display = 'block'
+        if (page === 'code') pageCode.style.display = 'block'
+        if (page === 'log') pageLog.style.display = 'block'
+      }
+
+      async function fetchCode(email) {
+        try {
+          const response = await fetch(`https://api.alimad.co/bash/${email}`)
+          const data = await response.json()
+
+          if (data && data.success && data.code) {
+            localStorage.setItem(KEY_EMAIL, email)
+            localStorage.setItem(KEY_CODE, data.code)
+            renderCodeView(email, data.code)
+          } else {
+            verifyStatus.textContent = data.message || 'Error :fahh:'
+          }
+        } catch (err) {
+          console.error(err)
+          verifyStatus.textContent = 'Failure. Emotianal Damage.'
+        }
+        getCode.innerText = 'Get Redeem Code'
+        ix = setInterval(() => {
+          getCode.disabled =
+            emailInput.value.trim() == '' ||
+            emailInput.value.split('@').length < 2 ||
+            !attendedInput.checked
+        }, 10)
+      }
+
+      function renderCodeView(email, code) {
+        displayEmail.textContent = email
+        displayCode.textContent = code
+        guideCode.textContent = code
+        showPage('code')
+      }
+
+      verifyForm.addEventListener('submit', e => {
+        e.preventDefault()
+        clearInterval(ix)
+        getCode.disabled = true
+        getCode.innerText = 'Loading...'
+
+        const email = emailInput.value.trim()
+        if (email && attendedInput.checked) {
+          fetchCode(email)
+        }
+      })
+
+      logForm.addEventListener('submit', async e => {
+        e.preventDefault()
+        const domainName = domainInput.value.trim()
+        if (!domainName) return
+
+        logStatus.textContent = 'Logging domain...'
+        try {
+          const url = `https://log.alimad.co/api/log?channel=bblr&text=${encodeURIComponent(
+            domainName
+          )}`
+          await fetch(url)
+          logStatus.textContent = `Logged domain "${domainName}" successfully!`
+          domainInput.value = ''
+        } catch (err) {
+          console.error(err)
+          logStatus.textContent = 'Try again plz.'
+        }
+      })
+
+      changeEmailBtn.addEventListener('click', () => {
+        localStorage.removeItem(KEY_EMAIL)
+        localStorage.removeItem(KEY_CODE)
+        emailInput.value = ''
+        verifyStatus.textContent = ''
+        showPage('verify')
+      })
+
+      gotoLogBtn.addEventListener('click', () => showPage('log'))
+      backToCodeBtn.addEventListener('click', () => showPage('code'))
+
+      window.addEventListener('DOMContentLoaded', () => {
+        const savedEmail = localStorage.getItem(KEY_EMAIL)
+        const savedCode = localStorage.getItem(KEY_CODE)
+
+        if (savedEmail && savedCode) {
+          renderCodeView(savedEmail, savedCode)
+        } else if (savedEmail) {
+          emailInput.value = savedEmail
+          showPage('verify')
+        } else {
+          showPage('verify')
+        }
+      })
+    </script>
+  </body>
+</html>
